@@ -1,4 +1,4 @@
-import { ICenter } from "../../../types";
+import { ICenter } from "typings";
 
 export default function Center({ toggle, children }: ICenter) {
   return (
