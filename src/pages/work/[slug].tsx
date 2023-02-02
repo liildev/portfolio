@@ -2,7 +2,7 @@ import type { GetServerSideProps } from "next";
 import { useRouter } from "next/router";
 import { useWhite } from "@/hooks";
 import { IProject } from "typings";
-import { urlFor, fetchProject, client } from "@/libs";
+import { urlFor, fetchProject } from "@/libs";
 import {
   SEO,
   Link,
@@ -12,8 +12,6 @@ import {
   Wrapper,
   Container,
 } from "../../components";
-import { projectQuery } from "@/constants";
-
 interface Props {
   project: IProject;
 }
@@ -86,11 +84,11 @@ export const getServerSideProps: GetServerSideProps<Props> = async ({
 }) => {
   const slug = query.slug as string;
 
-  const project = await client.fetch(projectQuery, { slug });
+  const project = await fetchProject(slug);
 
   return {
     props: {
-      project: project[0],
+      project,
     },
   };
 };
