@@ -1,4 +1,4 @@
-import { IThumb } from "../types";
+import { IThumb } from "typings";
 import { createClient } from "next-sanity";
 import imageUrlBuilder from "@sanity/image-url";
 
