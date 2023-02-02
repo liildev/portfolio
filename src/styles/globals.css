@@ -1,0 +1,348 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ------ Delays ------ */
+.delay02 {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+
+.delay04 {
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+
+.delay06 {
+  -webkit-animation-delay: 0.6s;
+  animation-delay: 0.6s;
+}
+
+.delay08 {
+  -webkit-animation-delay: 0.8s;
+  animation-delay: 0.8s;
+}
+
+@layer base {
+  @font-face {
+    font-family: "Montserrat";
+    src: url("/fonts/Montserrat-ExtraBold.ttf") format("truetype");
+    font-weight: 800;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Montserrat";
+    src: url("/fonts/Montserrat-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Montserrat";
+    src: url("/fonts/Montserrat-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Montserrat";
+    src: url("/fonts/Montserrat-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Montserrat";
+    src: url("/fonts/Montserrat-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  html,
+  body {
+    @apply font-montserrat antialiased text-[calc(1em+1vw)] text-white;
+  }
+
+  h1 {
+    @apply font-bold fixed -tracking-wide text-18vmin md:leading-110 leading-130;
+  }
+
+  h2 {
+    @apply font-bold tracking-wide text-2em sx:text-2.2em leading-120 animate;
+  }
+
+  h4 {
+    @apply font-semibold text-3xl md:text-4xl leading-120 mt-[14vh] mb-[4vh];
+  }
+
+  h5 {
+    @apply font-medium leading-140 text-3xl my-[3vh];
+  }
+
+  p {
+    @apply text-md md:text-xl leading-170 mb-[3vh];
+  }
+
+  b {
+    @apply font-medium text-md sm:text-lg;
+  }
+
+  em {
+    @apply text-sm sm:text-md text-dark-gray;
+  }
+
+  blockquote {
+    @apply text-lg flex flex-wrap items-center gap-2 my-[6vmin];
+    @apply py-2 px-7 border-l-4 text-dark-gray border-light-gray;
+  }
+
+  img {
+    @apply max-w-full max-h-full;
+  }
+
+  ul {
+    @apply leading-150 sm:leading-170 text-md sm:text-lg my-[2vh] list-disc ml-[2vh];
+  }
+}
+
+@layer components {
+  /* ------ Backgrounds ------ */
+  .website-background-black {
+    @apply bg-black;
+  }
+  .website-background-white {
+    @apply bg-white;
+  }
+
+  /* Text styles */
+  .hide-text-block {
+    @apply relative block overflow-y-hidden;
+  }
+
+  .medium-size {
+    @apply text-md sm:text-2xl leading-180 animate text-gray;
+  }
+
+  .small-size {
+    @apply font-semibold text-sm sx:text-lg mt-2 mb-0 text-red animate;
+  }
+
+  .link {
+    @apply text-red font-semibold on-hover-40 text-md;
+    @apply sm:text-lg md:text-xl my-2 cursor-pointer block;
+  }
+
+  /* ------ Hover states ------ */
+  .on-hover-40 {
+    @apply transition-all duration-500 ease-on-hover hover:md:ml-6;
+  }
+
+  .on-hover--40 {
+    @apply transition-all duration-500 ease-on-hover hover:md:-ml-6;
+  }
+
+  /* ------ Logo ------ */
+  .logo-wrapper {
+    @apply fixed float-right z-[999];
+    @apply top-[7%] md:top-[12%] left-[70%] md:left-[85%];
+  }
+
+  .label-logo {
+    @apply font-extrabold text-xl md:text-2xl xl:text-3xl on-hover--40;
+    @apply after:content-['LIILDEV'] md:after:content-['LD'];
+    @apply md:hover:after:content-['LIILDEV'] whitespace-nowrap cursor-pointer;
+  }
+
+  /* Labels */
+  .label-hello {
+    @apply after:content-['Hello.'] hover:after:content-['About'];
+  }
+
+  .label-iam {
+    @apply text-red after:content-['I_am'] hover:after:content-['Work'];
+  }
+
+  .label-liildev {
+    @apply text-red after:content-['Liil_Dev'] hover:after:content-['Contact'];
+  }
+
+  /* Grid */
+  .max-width {
+    @apply max-w-[86%] md:max-w-[21.5em] mx-auto;
+  }
+
+  .max-width-70 {
+    @apply max-w-full md:max-w-[70%] mx-auto animate;
+  }
+
+  .hide-mobile {
+    @apply md:hidden absolute h-full w-full;
+  }
+
+  .top-bottom-margin {
+    @apply mt-[35vh] mb-[30vh];
+  }
+
+  /*	=====================================================================
+							HOMEPAGE							
+	===================================================================== */
+  .tap-indication {
+    @apply md:hidden w-full fixed text-center font-semibold text-[14px] bottom-[4%];
+  }
+
+  .vertical-center {
+    @apply absolute h-full flex items-center z-10;
+  }
+
+  .bg-wrapper {
+    @apply fixed top-0 right-0 bottom-0 left-0 md:left-[35%];
+  }
+
+  .contact-list {
+    @apply list-none ml-0;
+  }
+
+  /*	=====================================================================
+							WORKPAGE							
+	===================================================================== */
+  .work-block {
+    @apply on-hover-40 my-[12vh];
+  }
+
+  .hero-image {
+    @apply h-[90vh] w-[100vw] xl:w-[85vw] my-[20vh] md:my-[30vh] animate delay02;
+  }
+
+  .hero-image img {
+    @apply w-full h-full object-cover;
+  }
+
+  .block-image-overflow {
+    @apply text-black overflow-x-hidden;
+  }
+}
+
+@layer utilities {
+  /* Animate */
+  .animate {
+    -webkit-animation: animate 0.6s cubic-bezier(0.2, 0.6, 0.2, 1);
+    -moz-animation: animate 0.6s cubic-bezier(0.2, 0.6, 0.2, 1);
+    animation: animate 0.6s cubic-bezier(0.2, 0.6, 0.2, 1);
+    -webkit-animation-fill-mode: backwards;
+    -moz-animation-fill-mode: backwards;
+    animation-fill-mode: backwards;
+  }
+
+  @-webkit-keyframes animate {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(100%);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }
+  }
+
+  @keyframes animate {
+    0% {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+
+  /* Logo */
+  .label-logo {
+    -webkit-animation: fadelogo 0.6s cubic-bezier(0.2, 0.6, 0.2, 1);
+    -moz-animation: fadelogo 0.6s cubic-bezier(0.2, 0.6, 0.2, 1);
+    animation: fadelogo 0.6s cubic-bezier(0.2, 0.6, 0.2, 1);
+    -webkit-animation-fill-mode: backwards;
+    -moz-animation-fill-mode: backwards;
+    animation-fill-mode: backwards;
+  }
+
+  @-webkit-keyframes fadelogo {
+    0% {
+      -webkit-transform: translateY(10vh);
+    }
+    100% {
+      -webkit-transform: translateY(0vh);
+    }
+  }
+
+  @keyframes fadelogo {
+    0% {
+      opacity: 0;
+      transform: translateY(10vh);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0vh);
+    }
+  }
+
+  /* Backgorund */
+  .bg-wrapper {
+    -webkit-animation: bg-photo 1.2s cubic-bezier(0.5, 0.6, 0.6, 1);
+    -moz-animation: bg-photo 1.2s cubic-bezier(0.5, 0.6, 0.6, 1);
+    animation: bg-photo 1.2s cubic-bezier(0.5, 0.6, 0.6, 1);
+    -webkit-animation-fill-mode: backwards;
+    -moz-animation-fill-mode: backwards;
+    animation-fill-mode: backwards;
+  }
+
+  @-webkit-keyframes bg-photo {
+    0% {
+      opacity: 0;
+      transform: scale(1.5);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes bg-photo {
+    0% {
+      opacity: 0;
+      transform: scale(1.5);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Indication */
+  .tap-indication {
+    animation: bounce 1s infinite alternate;
+    -webkit-animation: bounce 0.5s cubic-bezier(0.5, 0.6, 0.6, 1) infinite
+      alternate;
+    -moz-animation: bounce 0.5s cubic-bezier(0.5, 0.6, 0.6, 1) infinite
+      alternate;
+    animation: bounce 0.5s cubic-bezier(0.5, 0.6, 0.6, 1) infinite alternate;
+  }
+
+  @keyframes bounce {
+    from {
+      transform: translateY(0px);
+    }
+    to {
+      transform: translateY(-8px);
+    }
+  }
+
+  @-webkit-keyframes bounce {
+    from {
+      transform: translateY(0px);
+    }
+    to {
+      transform: translateY(-8px);
+    }
+  }
+}
