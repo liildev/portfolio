@@ -5,7 +5,7 @@ export default function ServerError() {
     <Container>
       <Wrapper>
         <Block>
-          <h2>Something went worng</h2>
+          <h2>Something went wrong</h2>
           <p className="small-size">Please, try again later</p>
         </Block>
       </Wrapper>

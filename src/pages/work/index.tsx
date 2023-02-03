@@ -17,9 +17,9 @@ export default function Work({ works }: Props) {
 
       <Container>
         <Wrapper>
-          {works.map((work) => (
-            <WorkItem key={work._id} work={work} />
-          ))}
+          {works
+            ? works.map((work) => <WorkItem key={work._id} work={work} />)
+            : []}
         </Wrapper>
       </Container>
     </>
