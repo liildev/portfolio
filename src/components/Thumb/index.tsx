@@ -1,10 +1,10 @@
+import Image from "next/image";
 import { IThumb } from "typings";
-// import Image from "next/image";
 
-export default function Image({ src, title }: IThumb) {
+export default function Thumb({ src, title }: IThumb) {
   return (
-    <div className="hero-image">
-      <img src={src} alt={title} />
+    <div className="hero-image relative">
+      <Image src={src} alt={title} fill />
     </div>
   );
 }
