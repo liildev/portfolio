@@ -28,7 +28,7 @@ export default function Work({ works }: Props) {
 
 export const getServerSideProps: GetServerSideProps<Props> = async () => {
   const works = await fetchWorks();
-
+  
   return {
     props: {
       works,
