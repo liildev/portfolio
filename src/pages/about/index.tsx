@@ -42,7 +42,7 @@ export default function About() {
 
             <p>
               You can read more about my experience, skills, education and much
-              more in the PDF attached bellow:
+              more in the attached bellow:
             </p>
 
             <Link
