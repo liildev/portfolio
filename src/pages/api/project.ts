@@ -4,7 +4,7 @@ import { IProject } from "typings";
 import { projectQuery } from "@/constants";
 
 type Data = {
-  project: IProject[];
+  project: IProject;
 };
 
 export default async function handler(
@@ -13,7 +13,7 @@ export default async function handler(
 ) {
   const slug = req.query.slug as string;
 
-  const project: IProject[] = await client.fetch(projectQuery, { slug });
+  const project: IProject = await client.fetch(projectQuery, { slug });
 
   res.status(200).json({ project });
 }

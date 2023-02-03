@@ -151,9 +151,9 @@
   }
 
   .label-logo {
-    @apply font-extrabold text-xl md:text-2xl xl:text-3xl on-hover--40;
-    @apply after:content-['LIILDEV'] md:after:content-['LD'];
-    @apply md:hover:after:content-['LIILDEV'] whitespace-nowrap cursor-pointer;
+    @apply font-bold text-xl on-hover--40;
+    @apply after:content-['liil.dev'] md:after:content-['liil'];
+    @apply md:hover:after:content-['liil.dev'] whitespace-nowrap cursor-pointer;
   }
 
   /* Labels */

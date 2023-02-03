@@ -7,7 +7,7 @@ const workQuery = groq`*[_type == "projects"] {
     _createdAt
 } | order(_createdAt desc)`;
 
-const projectQuery = groq`*[_type == "projects" && lower(title) == $slug] { 
+const projectQuery = groq`*[_type == "projects" && lower(title) == $slug][0] { 
     _id,   
     img, 
     code, 
