@@ -17,9 +17,9 @@ export default function Work({ works }: Props) {
 
       <Container>
         <Wrapper>
-            {works.map((work) => (
-              <WorkItem key={work._id} work={work} />
-            ))}
+          {works.map((work) => (
+            <WorkItem key={work._id} work={work} />
+          ))}
         </Wrapper>
       </Container>
     </>
@@ -28,7 +28,7 @@ export default function Work({ works }: Props) {
 
 export const getServerSideProps: GetServerSideProps<Props> = async () => {
   const works = await fetchWorks();
-  
+
   return {
     props: {
       works,
