@@ -3,7 +3,7 @@ import { createClient } from "next-sanity";
 import imageUrlBuilder from "@sanity/image-url";
 
 const config = {
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "x8nrd3tv",
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
   apiVersion: "2022-02-01",
   useCdn: true,
