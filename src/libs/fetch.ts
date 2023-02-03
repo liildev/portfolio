@@ -1,24 +1,16 @@
-import axios from "axios";
-import { IWork, IProject } from "typings";
+import { client } from "./client";
+import { projectQuery, workQuery } from "@/constants";
 
 const fetchWorks = async () => {
-  const { data } = await axios.get(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/api/works`
-  );
-
-  const works: IWork[] = data.works;
+  const works = client.fetch(workQuery);
 
   return works;
 };
 
 const fetchProject = async (slug: string) => {
-  const { data } = await axios.get(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/api/project?slug=${slug}`
-  );
+  const project = client.fetch(projectQuery, { slug });
 
-  const project: IProject[] = data.project;
-
-  return project[0];
+  return project;
 };
 
 export { fetchWorks, fetchProject };

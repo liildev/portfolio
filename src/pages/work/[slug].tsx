@@ -88,7 +88,7 @@ export const getServerSideProps: GetServerSideProps<Props> = async ({
 
   return {
     props: {
-      project,
+      project: project[0],
     },
   };
 };
