@@ -41,7 +41,7 @@ export default function SEO({
       <meta property="og:type" content="website" />
       <meta
         property="og:url"
-        content={`https://liildev.uz${path ? path : ""}`}
+        content={`https://liil.dev${path ? path : ""}`}
       />
       <meta property="og:site_name" content="Liil Dev" key="ogsitename" />
 
