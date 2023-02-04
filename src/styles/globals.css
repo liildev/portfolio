@@ -80,11 +80,11 @@
   }
 
   h2 {
-    @apply font-bold -tracking-[2px] text-2em sx:text-2.2em leading-120 animate;
+    @apply font-extrabold tracking-wide text-2em sx:text-2.2em leading-120 animate;
   }
 
   h4 {
-    @apply font-medium text-3xl md:text-4xl leading-120 mt-[14vh] mb-[4vh];
+    @apply font-semibold text-3xl md:text-4xl leading-120 mt-[14vh] mb-[4vh];
   }
 
   h5 {
@@ -92,7 +92,7 @@
   }
 
   p {
-    @apply text-md md:text-lg leading-170 mb-[3vh];
+    @apply text-lg leading-170 mb-[3vh];
   }
 
   b {
@@ -140,8 +140,8 @@
   }
 
   .link {
-    @apply text-red font-semibold on-hover-40 text-md;
-    @apply sm:text-xl md:text-xl my-1.5 cursor-pointer block;
+    @apply text-red font-semibold on-hover-40;
+    @apply text-xl my-[4vh] cursor-pointer block;
   }
 
   /* ------ Hover states ------ */
