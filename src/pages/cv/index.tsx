@@ -16,83 +16,87 @@ export default function CV() {
           <Wrapper>
             <Block>
               {/* <h2>Resume</h2> */}
-              <h2>In procces...</h2>
+              <h2>In process...</h2>
             </Block>
 
             {/* <Block>
-            <p className="medium-size">Tashkent, Uzbekistan</p>
-          </Block> */}
+              <p className="medium-size">Tashkent, Uzbekistan</p>
+            </Block>
 
-            {/*
-          <Content>
-            <h4>Summary</h4>
-            <ul>
-              <li>
-                About a year of industry experience in Frontend and Backend
-                Development.
-              </li>
-              <li>
-                Top skills include React and Node. Experienced working in
-                fast-paced, Agile, and Scrum project management methodologies.
-              </li>
-              <li>
-                Strong design, coding, and debugging skills using JavaScript and
-                its technology.
-              </li>
-              <li>
-                Solid understanding of algorithms, data structures, and
-                object-oriented programming.
-              </li>
-              <li>
-                Experience working with APIs. Collaborated with backend
-                engineers to develop REST API contracts
-              </li>
-              <li>
-                Experience working with a collaboration team on GitHub and GIT.
-              </li>
-            </ul>
+            <Content>
+              <h4>Summary</h4>
 
-            <h4>Work Expreience</h4>
+              <ul>
+                <li>
+                  About a year of industry experience in Frontend and Backend
+                  Development.
+                </li>
+                <li>
+                  Top skills include React and Node. Experienced working in
+                  fast-paced, Agile, and Scrum project management methodologies.
+                </li>
+                <li>
+                  Strong design, coding, and debugging skills using JavaScript
+                  and its technology.
+                </li>
+                <li>
+                  Solid understanding of algorithms, data structures, and
+                  object-oriented programming.
+                </li>
+                <li>
+                  Experience working with APIs. Collaborated with backend
+                  engineers to develop REST API contracts
+                </li>
+                <li>
+                  Experience working with a collaboration team on GitHub and
+                  GIT.
+                </li>
+              </ul>
 
-            <div className="flex items-center justify-between">
-              <b className="font-bold text-xl">Mentor assistant</b>
-              <em>September 2022 - Present</em>
-            </div>
+              <h4>Work Expreience</h4>
 
-            <ul>
-              <li>
-                Help over 27 students with programming and web development.
-              </li>
-              <li>
-                Providing students with an hour of practice after the lesson on
-                topics covered
-              </li>
-              <li>
-                At the end of each month, take tests from students according to
-                the criteria and provide feedback on their results
-              </li>
-              <li>
-                Individual work with students who have difficulties learning a
-                lesson
-              </li>
-              <li>
-                Discussed and solved about 100 simple and medium tasks from
-                Leetcode and Codewars
-              </li>
-            </ul>
+              <div className="flex items-center justify-between">
+                <b className="font-bold text-xl">Mentor assistant</b>
+                <em>August 2022 - Present</em>
+              </div>
 
-            <h4>Skills</h4>
+              <ul>
+                <li>
+                  Trained group students includes 20-30 members in using Full
+                  Stack Web Development course
+                </li>
+                <li>
+                  Providing students with an hour of practice after the lesson
+                  on topics covered
+                </li>
+                <li>
+                  At the end of each month, take tests from students according
+                  to the criteria and provide feedback on their results
+                </li>
+                <li>
+                  Individual work with students who have difficulties learning a
+                  lesson
+                </li>
+                <li>
+                  Discussed and solved about 100 simple and medium tasks from
+                  Leetcode and Codewars
+                </li>
+              </ul>
 
-            <div className="flex flex-wrap justify-center gap-3">
-              {skills.map(({ name, url }) => (
-                <img
-                  src={url}
-                  className="max-w-[80px] max-h-[50px] grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition ease-out duration-300 object-contain"
-                  alt={name}
-                />
-              ))}
-            </div>
-          </Content> */}
+              <h4>Projects</h4>
+
+              <h4>Skills</h4>
+
+              <div className="flex flex-wrap justify-center gap-3">
+                {skills.map(({ name, url }) => (
+                  <img
+                    src={url}
+                    className="max-w-[80px] max-h-[50px] grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition ease-out duration-300 object-contain"
+                    alt={name}
+                  />
+                ))}
+              </div>
+            </Content> */}
           </Wrapper>
         </Container>
       </div>

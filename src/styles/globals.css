@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -26,21 +25,66 @@
 }
 
 @layer base {
+  @font-face {
+    font-family: "Gilroy";
+    src: url("/fonts/Gilroy-ExtraBold.eot");
+    src: url("/fonts/Gilroy-ExtraBold.woff") format("woff"),
+      url("/fonts/Gilroy-ExtraBold.ttf") format("truetype");
+    font-weight: 800;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Gilroy";
+    src: url("/fonts/Gilroy-Bold.eot");
+    src: url("/fonts/Gilroy-Bold.woff") format("woff"),
+      url("/fonts/Gilroy-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Gilroy";
+    src: url("/fonts/Gilroy-Semibold.eot");
+    src: url("/fonts/Gilroy-Semibold.woff") format("woff"),
+      url("/fonts/Gilroy-Semibold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Gilroy";
+    src: url("/fonts/Gilroy-Medium.eot");
+    src: url("/fonts/Gilroy-Medium.woff") format("woff"),
+      url("/fonts/Gilroy-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Gilroy";
+    src: url("/fonts/Gilroy-Regular.eot");
+    src: url("/fonts/Gilroy-Regular.woff") format("woff"),
+      url("/fonts/Gilroy-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+
   html,
   body {
-    @apply font-montserrat antialiased text-[calc(1em+1vw)] text-white;
+    @apply font-gilroy antialiased text-[calc(1em+1vw)] text-white;
   }
 
   h1 {
-    @apply font-bold fixed -tracking-wide text-18vmin md:leading-110 leading-130;
+    @apply font-extrabold fixed -tracking-[2px] text-18vmin md:leading-110 leading-130;
   }
 
   h2 {
-    @apply font-bold tracking-wide text-2em sx:text-2.2em leading-120 animate;
+    @apply font-bold -tracking-[2px] text-2em sx:text-2.2em leading-120 animate;
   }
 
   h4 {
-    @apply font-semibold text-3xl md:text-4xl leading-120 mt-[14vh] mb-[4vh];
+    @apply font-medium text-3xl md:text-4xl leading-120 mt-[14vh] mb-[4vh];
   }
 
   h5 {
@@ -48,11 +92,11 @@
   }
 
   p {
-    @apply text-md md:text-xl leading-170 mb-[3vh];
+    @apply text-md md:text-lg leading-170 mb-[3vh];
   }
 
   b {
-    @apply font-medium text-md sm:text-lg;
+    @apply font-normal text-md sm:text-lg;
   }
 
   em {
@@ -61,7 +105,7 @@
 
   blockquote {
     @apply text-lg flex flex-wrap items-center gap-2 my-[6vmin];
-    @apply py-2 px-7 border-l-4 text-dark-gray border-light-gray;
+    @apply py-2 px-4 border-l-4 text-dark-gray border-light-gray;
   }
 
   img {
@@ -88,7 +132,7 @@
   }
 
   .medium-size {
-    @apply text-md sm:text-2xl leading-180 animate text-gray;
+    @apply text-md sm:text-2xl leading-170 animate text-gray;
   }
 
   .small-size {
@@ -97,7 +141,7 @@
 
   .link {
     @apply text-red font-semibold on-hover-40 text-md;
-    @apply sm:text-lg md:text-xl my-2 cursor-pointer block;
+    @apply sm:text-xl md:text-xl my-1.5 cursor-pointer block;
   }
 
   /* ------ Hover states ------ */
@@ -112,12 +156,12 @@
   /* ------ Logo ------ */
   .logo-wrapper {
     @apply fixed float-right z-[999];
-    @apply top-[7%] md:top-[12%] left-[70%] md:left-[85%];
+    @apply top-[5%] md:top-[12%] left-[75%] md:left-[85%];
   }
 
   .label-logo {
-    @apply font-bold text-xl on-hover--40;
-    @apply after:content-['liil.dev'] md:after:content-['liil'];
+    @apply font-bold text-xl sx:text-2xl on-hover--40;
+    @apply after:content-['liil.dev'] md:after:content-['liil.'];
     @apply md:hover:after:content-['liil.dev'] whitespace-nowrap cursor-pointer;
   }
 

@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        montserrat: ["Montserrat", "sans-serif"],
+        gilroy: ["Gilroy", "sans-serif"],
       },
 
       fontSize: {
@@ -17,7 +17,7 @@ module.exports = {
         "4xl": "40px",
         "6xl": "64px",
         "2em": "2em",
-        "2.2em": "2.222em",
+        "2.2em": "2.2em",
         "18vmin": "18vmin",
       },
 
