@@ -5,7 +5,7 @@ export default function About() {
   return (
     <>
       <SEO
-      path="/about"
+        path="/about"
         title="About"
         description="All information about Liil Dev"
       />
@@ -45,11 +45,7 @@ export default function About() {
               more in the attached bellow:
             </p>
 
-            <Link
-              href="/cv"
-              className="link"
-              onClick={() => window.scroll(0, 0)}
-            >
+            <Link href="/cv" className="link" scroll={true}>
               My resume
             </Link>
           </Content>

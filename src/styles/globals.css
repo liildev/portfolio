@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -27,45 +26,45 @@
 @layer base {
   @font-face {
     font-family: "Gilroy";
-    src: url("/fonts/Gilroy-ExtraBold.eot");
-    src: url("/fonts/Gilroy-ExtraBold.woff") format("woff"),
-      url("/fonts/Gilroy-ExtraBold.ttf") format("truetype");
+    src: url("../fonts/Gilroy-ExtraBold.eot");
+    src: url("../fonts/Gilroy-ExtraBold.woff") format("woff"),
+      url("../fonts/Gilroy-ExtraBold.ttf") format("truetype");
     font-weight: 800;
     font-style: normal;
   }
 
   @font-face {
     font-family: "Gilroy";
-    src: url("/fonts/Gilroy-Bold.eot");
-    src: url("/fonts/Gilroy-Bold.woff") format("woff"),
-      url("/fonts/Gilroy-Bold.ttf") format("truetype");
+    src: url("../fonts/Gilroy-Bold.eot");
+    src: url("../fonts/Gilroy-Bold.woff") format("woff"),
+      url("../fonts/Gilroy-Bold.ttf") format("truetype");
     font-weight: 700;
     font-style: normal;
   }
 
   @font-face {
     font-family: "Gilroy";
-    src: url("/fonts/Gilroy-Semibold.eot");
-    src: url("/fonts/Gilroy-Semibold.woff") format("woff"),
-      url("/fonts/Gilroy-Semibold.ttf") format("truetype");
+    src: url("../fonts/Gilroy-Semibold.eot");
+    src: url("../fonts/Gilroy-Semibold.woff") format("woff"),
+      url("../fonts/Gilroy-Semibold.ttf") format("truetype");
     font-weight: 600;
     font-style: normal;
   }
 
   @font-face {
     font-family: "Gilroy";
-    src: url("/fonts/Gilroy-Medium.eot");
-    src: url("/fonts/Gilroy-Medium.woff") format("woff"),
-      url("/fonts/Gilroy-Medium.ttf") format("truetype");
+    src: url("../fonts/Gilroy-Medium.eot");
+    src: url("../fonts/Gilroy-Medium.woff") format("woff"),
+      url("../fonts/Gilroy-Medium.ttf") format("truetype");
     font-weight: 500;
     font-style: normal;
   }
 
   @font-face {
     font-family: "Gilroy";
-    src: url("/fonts/Gilroy-Regular.eot");
-    src: url("/fonts/Gilroy-Regular.woff") format("woff"),
-      url("/fonts/Gilroy-Regular.ttf") format("truetype");
+    src: url("../fonts/Gilroy-Regular.eot");
+    src: url("../fonts/Gilroy-Regular.woff") format("woff"),
+      url("../fonts/Gilroy-Regular.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
   }
@@ -84,7 +83,7 @@
   }
 
   h4 {
-    @apply font-semibold text-3xl md:text-4xl leading-120 mt-[14vh] mb-[4vh];
+    @apply font-bold text-3xl md:text-4xl leading-120 mt-[14vh] mb-[4vh];
   }
 
   h5 {
@@ -92,7 +91,7 @@
   }
 
   p {
-    @apply text-lg leading-170 mb-[3vh];
+    @apply text-lg leading-160 sx:leading-170 mb-[3vh];
   }
 
   b {
@@ -140,8 +139,8 @@
   }
 
   .link {
-    @apply text-red font-semibold on-hover-40;
-    @apply text-xl my-[4vh] cursor-pointer block;
+    @apply cursor-pointer block text-red font-semibold;
+    @apply on-hover-40 my-2 text-[19px];
   }
 
   /* ------ Hover states ------ */

@@ -11,12 +11,7 @@ export default function WorkItem({ work }: Props) {
 
   return (
     <div className="work-block">
-      <Link
-        href={`/work/${title.toLowerCase()}`}
-        onClick={() => {
-          window.scroll(0, 0);
-        }}
-      >
+      <Link href={`/work/${title.toLowerCase()}`} scroll={true}>
         <Block>
           <h2>{title}</h2>
 
