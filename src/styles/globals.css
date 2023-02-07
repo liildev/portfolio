@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -24,66 +26,21 @@
 }
 
 @layer base {
-  @font-face {
-    font-family: "Gilroy";
-    src: url("../fonts/Gilroy-ExtraBold.eot");
-    src: url("../fonts/Gilroy-ExtraBold.woff") format("woff"),
-      url("../fonts/Gilroy-ExtraBold.ttf") format("truetype");
-    font-weight: 800;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: "Gilroy";
-    src: url("../fonts/Gilroy-Bold.eot");
-    src: url("../fonts/Gilroy-Bold.woff") format("woff"),
-      url("../fonts/Gilroy-Bold.ttf") format("truetype");
-    font-weight: 700;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: "Gilroy";
-    src: url("../fonts/Gilroy-Semibold.eot");
-    src: url("../fonts/Gilroy-Semibold.woff") format("woff"),
-      url("../fonts/Gilroy-Semibold.ttf") format("truetype");
-    font-weight: 600;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: "Gilroy";
-    src: url("../fonts/Gilroy-Medium.eot");
-    src: url("../fonts/Gilroy-Medium.woff") format("woff"),
-      url("../fonts/Gilroy-Medium.ttf") format("truetype");
-    font-weight: 500;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: "Gilroy";
-    src: url("../fonts/Gilroy-Regular.eot");
-    src: url("../fonts/Gilroy-Regular.woff") format("woff"),
-      url("../fonts/Gilroy-Regular.ttf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
-  }
-
   html,
   body {
-    @apply font-gilroy antialiased text-[calc(1em+1vw)] text-white;
+    @apply font-montserrat antialiased text-[calc(1em+1vw)] text-white;
   }
 
   h1 {
-    @apply font-extrabold fixed -tracking-[2px] text-18vmin md:leading-110 leading-130;
+    @apply font-bold fixed -tracking-[2px] text-18vmin md:leading-110 leading-130;
   }
 
   h2 {
-    @apply font-extrabold tracking-wide text-2em sx:text-2.2em leading-120 animate;
+    @apply font-bold tracking-wide text-2em sx:text-2.2em leading-120 animate;
   }
 
   h4 {
-    @apply font-bold text-3xl md:text-4xl leading-120 mt-[14vh] mb-[4vh];
+    @apply font-semibold text-3xl md:text-4xl leading-120 mt-[14vh] mb-[4vh];
   }
 
   h5 {
@@ -356,3 +313,48 @@
     }
   }
 }
+/* 
+@font-face {
+  font-family: "Gilroy";
+  src: url("../fonts/Gilroy-ExtraBold.eot");
+  src: url("../fonts/Gilroy-ExtraBold.woff") format("woff"),
+    url("../fonts/Gilroy-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("../fonts/Gilroy-Bold.eot");
+  src: url("../fonts/Gilroy-Bold.woff") format("woff"),
+    url("../fonts/Gilroy-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("../fonts/Gilroy-Semibold.eot");
+  src: url("../fonts/Gilroy-Semibold.woff") format("woff"),
+    url("../fonts/Gilroy-Semibold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("../fonts/Gilroy-Medium.eot");
+  src: url("../fonts/Gilroy-Medium.woff") format("woff"),
+    url("../fonts/Gilroy-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("../fonts/Gilroy-Regular.eot");
+  src: url("../fonts/Gilroy-Regular.woff") format("woff"),
+    url("../fonts/Gilroy-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+} */
