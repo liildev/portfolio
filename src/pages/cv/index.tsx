@@ -15,8 +15,8 @@ export default function CV() {
         <Container>
           <Wrapper>
             <Block>
-              {/* <h2>Resume</h2> */}
-              <h2>In process...</h2>
+              {/* <h2>Resume</h2>   */}
+              <h2>Coming soon</h2>
             </Block>
 
             {/* <Block>
