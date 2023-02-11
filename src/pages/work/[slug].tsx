@@ -1,23 +1,29 @@
-import type { GetServerSideProps } from "next";
+import { urlFor } from "@/libs";
 import { useRouter } from "next/router";
-import { useWhite } from "@/hooks";
-import { IProject } from "typings";
-import { urlFor, fetchProject } from "@/libs";
+import { getProject } from "@/redux/actions/project.action";
+import { projectSelector } from "@/redux/reducers/project.reducer";
+import { Fragment, useEffect } from "react";
+import { useWhite, useAppDispatch, useAppSelector } from "@/hooks";
+
 import {
   SEO,
   Link,
   Block,
   Thumb,
+  Error,
   Content,
   Wrapper,
   Container,
-} from "../../components";
-interface Props {
-  project: IProject;
-}
+} from "@/components";
 
-export default function Project({ project }: Props) {
-  const { asPath } = useRouter();
+export default function Project() {
+  const dispatch = useAppDispatch();
+  const { project, loading, error } = useAppSelector(projectSelector);
+  const {
+    isReady,
+    asPath,
+    query: { slug },
+  } = useRouter();
 
   const {
     img,
@@ -33,21 +39,32 @@ export default function Project({ project }: Props) {
 
   useWhite();
 
+  useEffect(() => {
+    if (isReady) {
+      dispatch(getProject(slug));
+    }
+  }, [dispatch, isReady, slug]);
+
+  if (loading) return;
+  
+  if (error) return <Error black />;
+
   return (
-    <>
+    <Fragment>
       <SEO path={asPath} title={title} description={about} color="#fff" />
+
       <div className="block-image-overflow">
         <Container>
           <Wrapper>
             <Block>
-              <h2>{title}</h2>
+              <h2>{project.title}</h2>
             </Block>
 
             <Block>
               <p className="medium-size">{sub_title}</p>
             </Block>
 
-            <Thumb src={urlFor(img).url()} title={title} />
+            {img && <Thumb src={urlFor(img).url()} title={title} />}
 
             <Content>
               <h4>About</h4>
@@ -67,7 +84,7 @@ export default function Project({ project }: Props) {
               <Link href={source}>{title} Website</Link>
 
               <blockquote>
-                {tags.map((tag) => (
+                {tags?.map((tag: string) => (
                   <b key={tag}>{tag}</b>
                 ))}
               </blockquote>
@@ -75,20 +92,6 @@ export default function Project({ project }: Props) {
           </Wrapper>
         </Container>
       </div>
-    </>
+    </Fragment>
   );
 }
-
-export const getServerSideProps: GetServerSideProps<Props> = async ({
-  query,
-}) => {
-  const slug = query.slug as string;
-
-  const project = await fetchProject(slug);
-
-  return {
-    props: {
-      project,
-    },
-  };
-};

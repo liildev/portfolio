@@ -1,11 +1,14 @@
-import { useRouter } from "next/router";
+import Link from "next/link";
+// import { useRouter } from "next/router";
 
 export default function Logo() {
-  const { back } = useRouter();
+  // const { back } = useRouter();
 
   return (
-    <div className="logo-wrapper">
-      <div className="label-logo" onClick={() => back()} />
-    </div>
+    <Link href="/">
+      <div className="logo-wrapper">
+        <div className="label-logo" />
+      </div>
+    </Link>
   );
 }

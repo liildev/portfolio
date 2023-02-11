@@ -1,14 +1,14 @@
 import Link from "next/link";
-import { SEO, Block, Content, Wrapper, Container } from "../../components";
+import { Fragment } from "react";
+import { aboutMeta } from "@/constants";
+import { SEO, Block, Content, Wrapper, Container } from "@/components";
 
 export default function About() {
+  const { path, title, description } = aboutMeta;
+  
   return (
-    <>
-      <SEO
-        path="/about"
-        title="About"
-        description="All information about Liil Dev"
-      />
+    <Fragment>
+      <SEO path={path} title={title} description={description} />
 
       <Container>
         <Wrapper>
@@ -27,12 +27,14 @@ export default function About() {
             <p>
               You can also call me a front-end, back-end or software developer.
             </p>
+            
             <p>
               I don&apos;t like to define myself by the work I&apos;ve done. I
               define myself by the work I want to do. Skills can be taught,
               personality is inherent. I prefer to keep learning, continue
               challenging myself, and do interesting things that matter.
             </p>
+
             <p>
               My abundant energy fuels me in the pursuit of many interests,
               hobbies, areas of study and artistic endeavors. I&apos;m a fast
@@ -51,6 +53,6 @@ export default function About() {
           </Content>
         </Wrapper>
       </Container>
-    </>
+    </Fragment>
   );
 }

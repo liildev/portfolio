@@ -1,8 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "Metropolis";
+  src: url("/fonts/Metropolis-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: "Metropolis";
+  src: url("/fonts/Metropolis-SemiBold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Metropolis";
+  src: url("/fonts/Metropolis-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Metropolis";
+  src: url("/fonts/Metropolis-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
 
 /* ------ Delays ------ */
 .delay02 {
@@ -28,7 +55,7 @@
 @layer base {
   html,
   body {
-    @apply font-montserrat antialiased text-[calc(1em+1vw)] text-white;
+    @apply font-metropolis antialiased text-[calc(1em+1vw)] text-white;
   }
 
   h1 {
@@ -36,7 +63,7 @@
   }
 
   h2 {
-    @apply font-bold tracking-wide text-2em sx:text-2.2em leading-120 animate;
+    @apply font-bold -tracking-[2px] text-2em sx:text-2.2em leading-120 animate;
   }
 
   h4 {
@@ -48,11 +75,11 @@
   }
 
   p {
-    @apply text-lg leading-160 sx:leading-170 mb-[3vh];
+    @apply font-normal text-md sm:text-lg leading-160 sx:leading-170 mb-[3vh];
   }
 
   b {
-    @apply font-normal text-md sm:text-lg;
+    @apply font-medium text-md sm:text-lg;
   }
 
   em {
@@ -61,7 +88,7 @@
 
   blockquote {
     @apply text-lg flex flex-wrap items-center gap-2 my-[6vmin];
-    @apply py-2 px-4 border-l-4 text-dark-gray border-light-gray;
+    @apply py-2 px-4 border-l-4 text-gray border-light-gray;
   }
 
   img {
@@ -92,12 +119,12 @@
   }
 
   .small-size {
-    @apply font-semibold text-sm sx:text-lg mt-2 mb-0 text-red animate;
+    @apply font-semibold text-sm sx:text-lg mb-0 text-red animate;
   }
 
   .link {
     @apply cursor-pointer block text-red font-semibold;
-    @apply on-hover-40 my-2 text-[19px];
+    @apply on-hover-40 my-2 text-sm sx:text-md sm:text-lg;
   }
 
   /* ------ Hover states ------ */
@@ -155,7 +182,7 @@
 							HOMEPAGE							
 	===================================================================== */
   .tap-indication {
-    @apply md:hidden w-full fixed text-center font-semibold text-[14px] bottom-[4%];
+    @apply md:hidden w-full fixed text-center font-semibold text-sm bottom-[4%];
   }
 
   .vertical-center {
@@ -188,9 +215,63 @@
   .block-image-overflow {
     @apply text-black overflow-x-hidden;
   }
+
+  .wave {
+    @apply w-1 h-20 m-1 rounded-xl bg-gradient-to-t from-red to-black;
+  }
+
+  .wave:nth-child(2) {
+    animation-delay: 0.1s;
+  }
+  .wave:nth-child(3) {
+    animation-delay: 0.2s;
+  }
+  .wave:nth-child(4) {
+    animation-delay: 0.3s;
+  }
+  .wave:nth-child(5) {
+    animation-delay: 0.4s;
+  }
+  .wave:nth-child(6) {
+    animation-delay: 0.5s;
+  }
+  .wave:nth-child(7) {
+    animation-delay: 0.6s;
+  }
+  .wave:nth-child(8) {
+    animation-delay: 0.7s;
+  }
+  .wave:nth-child(9) {
+    animation-delay: 0.8s;
+  }
+  .wave:nth-child(10) {
+    animation-delay: 0.9s;
+  }
 }
 
 @layer utilities {
+  /* Wave */
+  .wave {
+    -webkit-animation: wave 1s linear infinite;
+    -moz-animation: wave 1s linear infinite;
+    animation: wave 1s linear infinite;
+    -webkit-animation-fill-mode: backwards;
+    -moz-animation-fill-mode: backwards;
+    animation-fill-mode: backwards;
+  }
+
+  @keyframes wave {
+    0% {
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+
   /* Animate */
   .animate {
     -webkit-animation: animate 0.6s cubic-bezier(0.2, 0.6, 0.2, 1);
@@ -313,48 +394,3 @@
     }
   }
 }
-/* 
-@font-face {
-  font-family: "Gilroy";
-  src: url("../fonts/Gilroy-ExtraBold.eot");
-  src: url("../fonts/Gilroy-ExtraBold.woff") format("woff"),
-    url("../fonts/Gilroy-ExtraBold.ttf") format("truetype");
-  font-weight: 800;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Gilroy";
-  src: url("../fonts/Gilroy-Bold.eot");
-  src: url("../fonts/Gilroy-Bold.woff") format("woff"),
-    url("../fonts/Gilroy-Bold.ttf") format("truetype");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Gilroy";
-  src: url("../fonts/Gilroy-Semibold.eot");
-  src: url("../fonts/Gilroy-Semibold.woff") format("woff"),
-    url("../fonts/Gilroy-Semibold.ttf") format("truetype");
-  font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Gilroy";
-  src: url("../fonts/Gilroy-Medium.eot");
-  src: url("../fonts/Gilroy-Medium.woff") format("woff"),
-    url("../fonts/Gilroy-Medium.ttf") format("truetype");
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Gilroy";
-  src: url("../fonts/Gilroy-Regular.eot");
-  src: url("../fonts/Gilroy-Regular.woff") format("woff"),
-    url("../fonts/Gilroy-Regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-} */

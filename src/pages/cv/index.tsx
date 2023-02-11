@@ -1,5 +1,6 @@
-import { cvMeta, skills } from "@/constants";
+import { Fragment } from "react";
 import { useWhite } from "@/hooks";
+import { cvMeta, skills } from "@/constants";
 import { SEO, Block, Content, Wrapper, Container } from "@/components";
 
 export default function CV() {
@@ -8,7 +9,7 @@ export default function CV() {
   useWhite();
 
   return (
-    <>
+    <Fragment>
       <SEO path={path} title={title} description={description} color="#fff" />
 
       <div className="text-black">
@@ -100,6 +101,6 @@ export default function CV() {
           </Wrapper>
         </Container>
       </div>
-    </>
+    </Fragment>
   );
 }

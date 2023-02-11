@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { contactMeta, socialLinks } from "@/constants";
 import { SEO, Link, Block, Content, Wrapper, Container } from "@/components";
 
@@ -5,7 +6,7 @@ export default function Contact() {
   const { path, title, description } = contactMeta;
   
   return (
-    <>
+    <Fragment>
       <SEO path={path} title={title} description={description} />
       <Container>
         <Wrapper>
@@ -41,6 +42,6 @@ export default function Contact() {
           </Content>
         </Wrapper>
       </Container>
-    </>
+    </Fragment>
   );
 }

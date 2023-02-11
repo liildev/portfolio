@@ -1,14 +1,8 @@
 import { ILink } from "typings";
 
-export default function Link({ href, onClick, children }: ILink) {
+export default function Link({ children, ...props }: ILink) {
   return (
-    <a
-      href={href}
-      className="link"
-      rel="noopener noreferrer"
-      target="_blank"
-      onClick={onClick}
-    >
+    <a className="link" target="_blank" rel="noopener noreferrer" {...props}>
       {children}
     </a>
   );

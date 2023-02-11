@@ -37,8 +37,7 @@ interface ILabel {
 }
 
 interface ILink {
-  href?: string;
-  onClick?: () => void;
+  href: string;
   children: ReactNode;
 }
 
@@ -56,7 +55,6 @@ interface IResponsive {
   mobile?: boolean;
   toggle?: boolean;
 }
-
 
 interface ISeo {
   path?: string;

@@ -1,18 +1,25 @@
-import type { GetServerSideProps } from "next";
-import { IWork } from "typings";
 import { workMeta } from "@/constants";
-import { fetchWorks } from "@/libs";
-import { SEO, Wrapper, WorkItem, Container } from "@/components";
+import { getWorks } from "@/redux/actions/work.action";
+import { worksSelector } from "@/redux/reducers/work.reducer";
+import { Fragment, useEffect } from "react";
+import { useAppDispatch, useAppSelector } from "@/hooks";
+import { SEO, Error, Wrapper, WorkItem, Container } from "@/components";
 
-interface Props {
-  works: IWork[];
-}
-
-export default function Work({ works }: Props) {
+export default function Work() {
+  const dispatch = useAppDispatch();
+  const { works, loading, error } = useAppSelector(worksSelector);
   const { path, title, description } = workMeta;
 
+  useEffect(() => {
+    dispatch(getWorks());
+  }, [dispatch]);
+
+  if (loading) return;
+
+  if (error) return <Error />;
+
   return (
-    <>
+    <Fragment>
       <SEO path={path} title={title} description={description} />
 
       <Container>
@@ -22,16 +29,6 @@ export default function Work({ works }: Props) {
           ))}
         </Wrapper>
       </Container>
-    </>
+    </Fragment>
   );
 }
-
-export const getServerSideProps: GetServerSideProps<Props> = async () => {
-  const works = await fetchWorks();
-
-  return {
-    props: {
-      works,
-    },
-  };
-};

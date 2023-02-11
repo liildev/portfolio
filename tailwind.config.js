@@ -4,14 +4,14 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        montserrat: ["Montserrat"],
+        metropolis: ["Metropolis"],
       },
 
       fontSize: {
-        xl: "20px",
-        lg: "18px",
-        md: "16px",
         sm: "14px",
+        md: "16px",
+        lg: "18px",
+        xl: "20px",
         "2xl": "24px",
         "3xl": "30px",
         "4xl": "40px",

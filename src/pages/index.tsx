@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { homeMeta } from "@/constants";
 import { useToggle } from "@/hooks";
 import {
@@ -10,12 +11,11 @@ import {
 } from "@/components";
 
 export default function Home() {
+  const { description } = homeMeta;
   const { toggle, click } = useToggle();
 
-  const { description } = homeMeta;
-
   return (
-    <>
+    <Fragment>
       <SEO description={description} />
 
       <div onClick={click}>
@@ -37,6 +37,6 @@ export default function Home() {
 
         <Animation />
       </div>
-    </>
+    </Fragment>
   );
 }

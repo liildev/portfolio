@@ -14,7 +14,6 @@ export default function WorkItem({ work }: Props) {
       <Link href={`/work/${title.toLowerCase()}`} scroll={true}>
         <Block>
           <h2>{title}</h2>
-
           <p className="small-size">{sub_title}</p>
         </Block>
       </Link>
