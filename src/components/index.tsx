@@ -4,7 +4,6 @@ import Link from "./Link";
 import Error from "./Error";
 import Block from "./Block";
 import Thumb from "./Thumb";
-import Loader from "./Loader";
 import Content from "./Content";
 import Wrapper from "./Wrapper";
 import WorkItem from "./WorkItem";
@@ -19,7 +18,6 @@ export {
   Error,
   Thumb,
   Center,
-  Loader,
   Content,
   Wrapper,
   WorkItem,
