@@ -4,13 +4,13 @@ import { cvMeta, skills } from "@/constants";
 import { SEO, Block, Content, Wrapper, Container } from "@/components";
 
 export default function CV() {
-  const { path, title, description } = cvMeta;
+  const {  title, description } = cvMeta();
 
   useWhite();
 
   return (
     <Fragment>
-      <SEO path={path} title={title} description={description} color="#fff" />
+      <SEO title={title} description={description} color="#fff" />
 
       <div className="text-black">
         <Container>

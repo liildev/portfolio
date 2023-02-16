@@ -33,12 +33,14 @@ module.exports = {
       },
 
       colors: {
-        red: "#ea0f1e",
-        gray: "#888888",
-        black: "#000000",
-        white: "#ffffff",
-        "dark-gray": "#666666",
-        "light-gray": "#dddddd",
+        red: {
+          DEFAULT: "#ea0f1e",
+        },
+        gray: {
+          DEFAULT: "#888888",
+          100: "#dddddd",
+          200: "#666666",
+        },
       },
 
       transitionTimingFunction: {

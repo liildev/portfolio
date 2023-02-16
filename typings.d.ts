@@ -6,7 +6,7 @@ interface IWork {
   sub_title: string;
 }
 
-interface IProject {
+interface ISlug {
   title: string;
   sub_title: string;
   about: string;
@@ -57,7 +57,6 @@ interface IResponsive {
 }
 
 interface ISeo {
-  path?: string;
   title?: string;
   color?: string;
   keywords?: string;

@@ -1,11 +1,9 @@
 import { Action, configureStore, ThunkAction } from "@reduxjs/toolkit";
-import workReducer from "./reducers/work.reducer";
-import projectReducer from "./reducers/project.reducer";
+import workReducer from "./reducers";
 
 export const store = configureStore({
   reducer: {
-    works: workReducer,
-    project: projectReducer,
+    work: workReducer,
   },
 });
 

@@ -4,11 +4,11 @@ import { aboutMeta } from "@/constants";
 import { SEO, Block, Content, Wrapper, Container } from "@/components";
 
 export default function About() {
-  const { path, title, description } = aboutMeta;
-  
+  const { title, description } = aboutMeta();
+
   return (
     <Fragment>
-      <SEO path={path} title={title} description={description} />
+      <SEO title={title} description={description} />
 
       <Container>
         <Wrapper>
@@ -27,7 +27,7 @@ export default function About() {
             <p>
               You can also call me a front-end, back-end or software developer.
             </p>
-            
+
             <p>
               I don&apos;t like to define myself by the work I&apos;ve done. I
               define myself by the work I want to do. Skills can be taught,

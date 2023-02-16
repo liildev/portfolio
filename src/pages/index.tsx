@@ -11,7 +11,7 @@ import {
 } from "@/components";
 
 export default function Home() {
-  const { description } = homeMeta;
+  const { description } = homeMeta();
   const { toggle, click } = useToggle();
 
   return (

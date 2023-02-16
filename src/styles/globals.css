@@ -83,12 +83,12 @@
   }
 
   em {
-    @apply text-sm sm:text-md text-dark-gray;
+    @apply text-sm sm:text-md text-gray-200;
   }
 
   blockquote {
     @apply text-lg flex flex-wrap items-center gap-2 my-[6vmin];
-    @apply py-2 px-4 border-l-4 text-gray border-light-gray;
+    @apply py-2 px-4 border-l-4 text-gray border-gray-100;
   }
 
   img {
@@ -124,7 +124,7 @@
 
   .link {
     @apply cursor-pointer block text-red font-semibold;
-    @apply on-hover-40 my-2 text-sm sx:text-md sm:text-lg;
+    @apply on-hover-40 my-2 text-md sm:text-[19px];
   }
 
   /* ------ Hover states ------ */

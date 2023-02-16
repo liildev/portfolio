@@ -1,13 +1,15 @@
 import Head from "next/head";
+import { useRouter } from "next/router";
 import { ISeo } from "typings";
 
 export default function SEO({
-  path,
   title,
   color,
   keywords,
   description,
 }: ISeo) {
+  const { asPath } = useRouter();
+  
   return (
     <Head>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -39,10 +41,7 @@ export default function SEO({
       />
       <meta property="og:description" content={description} />
       <meta property="og:type" content="website" />
-      <meta
-        property="og:url"
-        content={`https://liil.dev${path ? path : ""}`}
-      />
+      <meta property="og:url" content={`https://liil.dev${asPath}`} />
       <meta property="og:site_name" content="Liil Dev" key="ogsitename" />
 
       <title>{title ? `${title} | Liil Dev` : "Liil Dev"}</title>

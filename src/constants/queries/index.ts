@@ -7,7 +7,7 @@ const workQuery = groq`*[_type == "projects"] {
     _createdAt
 } | order(_createdAt desc)`;
 
-const projectQuery = groq`*[_type == "projects" && lower(title) == $slug][0] { 
+const slugQuery = groq`*[_type == "projects" && lower(title) == $slug][0] { 
     _id,   
     img, 
     code, 
@@ -20,4 +20,4 @@ const projectQuery = groq`*[_type == "projects" && lower(title) == $slug][0] {
     play_market
 }`;
 
-export { workQuery, projectQuery };
+export { workQuery, slugQuery };

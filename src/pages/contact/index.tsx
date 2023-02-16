@@ -3,11 +3,11 @@ import { contactMeta, socialLinks } from "@/constants";
 import { SEO, Link, Block, Content, Wrapper, Container } from "@/components";
 
 export default function Contact() {
-  const { path, title, description } = contactMeta;
+  const { title, description } = contactMeta();
   
   return (
     <Fragment>
-      <SEO path={path} title={title} description={description} />
+      <SEO  title={title} description={description} />
       <Container>
         <Wrapper>
           <Block>

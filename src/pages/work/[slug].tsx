@@ -1,7 +1,8 @@
+import { ISlug } from "typings";
 import { urlFor } from "@/libs";
+import { getWork } from "@/redux/actions";
 import { useRouter } from "next/router";
-import { getProject } from "@/redux/actions/project.action";
-import { projectSelector } from "@/redux/reducers/project.reducer";
+import { workSelector } from "@/redux/reducers";
 import { Fragment, useEffect } from "react";
 import { useWhite, useAppDispatch, useAppSelector } from "@/hooks";
 
@@ -16,14 +17,19 @@ import {
   Container,
 } from "@/components";
 
-export default function Project() {
+export default function Slug() {
   const dispatch = useAppDispatch();
-  const { project, loading, error } = useAppSelector(projectSelector);
+
   const {
-    isReady,
-    asPath,
     query: { slug },
+    isReady,
   } = useRouter();
+
+  const {
+    data: { work },
+    loading,
+    error,
+  } = useAppSelector(workSelector);
 
   const {
     img,
@@ -35,29 +41,29 @@ export default function Project() {
     sub_title,
     app_store,
     play_market,
-  } = project;
+  }: ISlug = work;
 
   useWhite();
 
   useEffect(() => {
     if (isReady) {
-      dispatch(getProject(slug));
+      dispatch(getWork(slug));
     }
   }, [dispatch, isReady, slug]);
 
   if (loading) return;
-  
+
   if (error) return <Error black />;
 
   return (
     <Fragment>
-      <SEO path={asPath} title={title} description={about} color="#fff" />
+      <SEO title={title} description={about} color="#fff" />
 
       <div className="block-image-overflow">
         <Container>
           <Wrapper>
             <Block>
-              <h2>{project.title}</h2>
+              <h2>{title}</h2>
             </Block>
 
             <Block>
@@ -79,7 +85,7 @@ export default function Project() {
                 <Link href={app_store}>{title} on the App Store</Link>
               )}
 
-              <Link href={code}>{title} on the GitHub</Link>
+              {code && <Link href={code}>{title} on the GitHub</Link>}
 
               <Link href={source}>{title} Website</Link>
 

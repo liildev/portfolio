@@ -1,6 +1,6 @@
 import { skills } from "./skills";
 import { socialLinks } from "./links";
-import { workQuery, projectQuery } from "./queries";
+import { workQuery, slugQuery } from "./queries";
 import { cvMeta, workMeta, homeMeta, aboutMeta, contactMeta } from "./meta";
 
 export {
@@ -10,7 +10,7 @@ export {
   homeMeta,
   aboutMeta,
   workQuery,
+  slugQuery,
   contactMeta,
   socialLinks,
-  projectQuery,
 };
