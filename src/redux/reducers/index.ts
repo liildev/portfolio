@@ -1,10 +1,10 @@
 import type { RootState } from "@/redux";
-import { createReducer } from "@reduxjs/toolkit";
+import { PayloadAction, createReducer } from "@reduxjs/toolkit";
 import { ISlug, IWork } from "typings";
 import { getWork, getWorks } from "../actions";
 
 export type workState = {
-  data: { works: IWork[] | [], work: ISlug | {} };
+  data: { works: IWork[] | []; work: any };
   loading: boolean;
   error: boolean;
 };
@@ -26,11 +26,14 @@ export const workReducer = createReducer(initialState, (builder) => {
       state.data.works = [];
       state.error = false;
     })
-    .addCase(getWorks.fulfilled, (state, { payload }) => {
-      state.loading = false;
-      state.error = false;
-      state.data.works = payload;
-    })
+    .addCase(
+      getWorks.fulfilled,
+      (state, { payload }: PayloadAction<IWork[]>) => {
+        state.loading = false;
+        state.error = false;
+        state.data.works = payload;
+      }
+    )
     .addCase(getWorks.rejected, (state) => {
       state.loading = false;
       state.error = true;
@@ -44,7 +47,7 @@ export const workReducer = createReducer(initialState, (builder) => {
       state.data.work = {};
       state.error = false;
     })
-    .addCase(getWork.fulfilled, (state, { payload }) => {
+    .addCase(getWork.fulfilled, (state, { payload }: PayloadAction<ISlug>) => {
       state.loading = false;
       state.error = false;
       state.data.work = payload;

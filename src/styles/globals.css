@@ -75,11 +75,11 @@
   }
 
   p {
-    @apply font-normal text-md sm:text-lg leading-160 sx:leading-170 mb-[3vh];
+    @apply font-normal text-md sx:text-lg leading-160 sx:leading-170 mb-[3vh];
   }
 
   b {
-    @apply font-medium text-md sm:text-lg;
+    @apply font-medium text-md sx:text-lg;
   }
 
   em {
@@ -115,7 +115,7 @@
   }
 
   .medium-size {
-    @apply text-md sm:text-2xl leading-170 animate text-gray;
+    @apply text-base sm:text-xl leading-170 animate text-gray;
   }
 
   .small-size {
