@@ -72,15 +72,6 @@ export default function SEO({ title, color, keywords, description }: ISeo) {
         sizes="32x32"
         href="/favicon-32x32.png"
       />
-
-		<link rel="apple-touch-icon" href="https://dejan.works/img/touch-icon-iphone.png" type="image/png">
-		<link rel="apple-touch-icon" href="https://dejan.works/img/touch-icon-ipad.png" type="image/png" sizes="76x76">
-		<link rel="apple-touch-icon" href="https://dejan.works/img/touch-icon-iphone-retina.png" type="image/png" sizes="120x120">
-		<link rel="apple-touch-icon" href="https://dejan.works/img/touch-icon-ipad-retina.png" type="image/png" sizes="152x152">
-		
-		<link rel="icon" href="https://dejan.works/img/favicon-16x16.png" type="image/png" sizes="16x16">  
-		<link rel="icon" href="https://dejan.works/img/favicon-32x32.png" type="image/png" sizes="32x32">  
-		<link rel="icon" href="https://dejan.works/img/favicon-96x96.png" type="image/png" sizes="96x96"> 
       <link rel="manifest" href="/site.webmanifest" />
     </Head>
   );
