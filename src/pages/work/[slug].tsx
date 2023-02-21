@@ -1,9 +1,8 @@
 import { ISlug } from "typings";
 import { urlFor } from "@/libs";
-import { getWork } from "@/redux/actions";
 import { useRouter } from "next/router";
-import { workSelector } from "@/redux/reducers";
 import { Fragment, useEffect } from "react";
+import { getWork, workSelector } from "@/redux";
 import { useWhite, useAppDispatch, useAppSelector } from "@/hooks";
 
 import {
@@ -15,6 +14,7 @@ import {
   Content,
   Wrapper,
   Container,
+  Typography,
 } from "@/components";
 
 export default function Slug() {
@@ -63,17 +63,19 @@ export default function Slug() {
         <Container>
           <Wrapper>
             <Block>
-              <h2>{title}</h2>
+              <Typography h2>{title}</Typography>
             </Block>
 
             <Block>
-              <p className="medium-size">{sub_title}</p>
+              <Typography>{sub_title}</Typography>
             </Block>
 
-            {img && <Thumb src={urlFor(img).url()} title={title} />}
+            {img.length !== 0 && (
+              <Thumb src={urlFor(img).url()} title={title} />
+            )}
 
             <Content>
-              <h4>About</h4>
+              <Typography h4>About</Typography>
 
               <p>{about}</p>
 
@@ -90,7 +92,7 @@ export default function Slug() {
               <Link href={source}>{title} Website</Link>
 
               <blockquote>
-                {tags?.map((tag: string) => (
+                {tags.map((tag: string) => (
                   <b key={tag}>{tag}</b>
                 ))}
               </blockquote>

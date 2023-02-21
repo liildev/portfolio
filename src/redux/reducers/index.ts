@@ -4,7 +4,7 @@ import { ISlug, IWork } from "typings";
 import { getWork, getWorks } from "../actions";
 
 export type workState = {
-  data: { works: IWork[] | []; work: any };
+  data: { works: IWork[]; work: ISlug };
   loading: boolean;
   error: boolean;
 };
@@ -12,7 +12,17 @@ export type workState = {
 const initialState: workState = {
   data: {
     works: [],
-    work: {},
+    work: {
+      title: "",
+      sub_title: "",
+      about: "",
+      tags: [],
+      code: "",
+      source: "",
+      app_store: "",
+      play_market: "",
+      img: [],
+    },
   },
   loading: false,
   error: false,
@@ -44,7 +54,7 @@ export const workReducer = createReducer(initialState, (builder) => {
   builder
     .addCase(getWork.pending, (state) => {
       state.loading = true;
-      state.data.work = {};
+      state.data.work;
       state.error = false;
     })
     .addCase(getWork.fulfilled, (state, { payload }: PayloadAction<ISlug>) => {
@@ -55,7 +65,7 @@ export const workReducer = createReducer(initialState, (builder) => {
     .addCase(getWork.rejected, (state) => {
       state.loading = false;
       state.error = true;
-      state.data.work = {};
+      state.data.work;
     });
 });
 

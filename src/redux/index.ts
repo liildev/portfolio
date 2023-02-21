@@ -15,3 +15,7 @@ export type AppThunk<ReturnType> = ThunkAction<
   unknown,
   Action<string>
 >;
+
+export * from "@/redux/actions";
+export * from "@/redux/reducers";
+

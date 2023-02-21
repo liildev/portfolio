@@ -65,6 +65,21 @@ export const skills = [
   },
 
   {
+    name: "Google Search Console",
+    url: "https://www.pragmaticad.com/wp-content/webpc-passthru.php?src=https://www.pragmaticad.com/wp-content/uploads/2021/07/headergooglesearch-console.jpeg&nocache=1",
+  },
+
+  {
+    name: "Google Analyitcs",
+    url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/GAnalytics.svg/800px-GAnalytics.svg.png",
+  },
+
+  {
+    name: "Google Tag Manager",
+    url: "https://www.gstatic.com/analytics-suite/header/suite/v2/ic_tag_manager.svg",
+  },
+
+  {
     name: "Node",
     url: "https://i0.wp.com/phocode.com/wp-content/uploads/2016/09/nodejsLogo.png?fit=300%2C300&ssl=1",
   },

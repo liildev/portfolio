@@ -1,9 +1,16 @@
+import Link from "next/link";
 import { workMeta } from "@/constants";
-import { getWorks } from "@/redux/actions";
-import { workSelector } from "@/redux/reducers";
 import { Fragment, useEffect } from "react";
+import { getWorks, workSelector } from "@/redux";
 import { useAppDispatch, useAppSelector } from "@/hooks";
-import { SEO, Error, Wrapper, WorkItem, Container } from "@/components";
+import {
+  SEO,
+  Block,
+  Error,
+  Wrapper,
+  Container,
+  Typography,
+} from "@/components";
 
 export default function Work() {
   const dispatch = useAppDispatch();
@@ -29,8 +36,16 @@ export default function Work() {
 
       <Container>
         <Wrapper>
-          {works.map((work) => (
-            <WorkItem key={work._id} work={work} />
+          {works.map(({ _id, title, sub_title }) => (
+            <div key={_id} className="work-block">
+              <Link href={`/work/${title.toLowerCase()}`} scroll={true}>
+                <Block>
+                  <Typography h2>{title}</Typography>
+
+                  <Typography small>{sub_title}</Typography>
+                </Block>
+              </Link>
+            </div>
           ))}
         </Wrapper>
       </Container>

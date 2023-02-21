@@ -18,8 +18,29 @@ interface ISlug {
   img: IThumb[];
 }
 
+interface IData {
+  id: number;
+  item: string;
+}
+interface IStack {
+  time?: string;
+  title?: string;
+  data: IData[];
+  children?: ReactNode;
+}
+
 interface IContainer {
   logo?: boolean;
+  children: ReactNode;
+}
+
+interface ITypography {
+  h1?: boolean;
+  h2?: boolean;
+  h3?: boolean;
+  h4?: boolean;
+  small?: boolean;
+  large?: boolean;
   children: ReactNode;
 }
 

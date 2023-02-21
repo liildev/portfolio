@@ -7,9 +7,9 @@ export default function Thumb({ src, title }: IThumb) {
       <Image
         src={src}
         alt={title}
-        sizes="(min-width: 1280px) 85vw, 100vw"
-        priority
         fill
+        loading="lazy"
+        sizes="(min-width: 1280px) 85vw, 100vw"
       />
     </div>
   );

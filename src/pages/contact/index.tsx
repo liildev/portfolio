@@ -1,21 +1,29 @@
 import { Fragment } from "react";
 import { contactMeta, socialLinks } from "@/constants";
-import { SEO, Link, Block, Content, Wrapper, Container } from "@/components";
+import {
+  SEO,
+  Link,
+  Block,
+  Content,
+  Wrapper,
+  Container,
+  Typography,
+} from "@/components";
 
 export default function Contact() {
   const { title, description } = contactMeta();
-  
+
   return (
     <Fragment>
-      <SEO  title={title} description={description} />
+      <SEO title={title} description={description} />
       <Container>
         <Wrapper>
           <Block>
-            <h2>Let&apos;s make something great!</h2>
+            <Typography h2>Let&apos;s make something great!</Typography>
           </Block>
 
           <Content>
-            <h4>Contact</h4>
+            <Typography h4>Contact</Typography>
 
             <p>
               I&apos;m seeking out opportunities to collaborate with companies /

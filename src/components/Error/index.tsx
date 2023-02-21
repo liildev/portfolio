@@ -1,7 +1,7 @@
 import React from "react";
 import Block from "../Block";
-import Wrapper from "../Wrapper";
-import Container from "../Container";
+import Wrapper from "../Grid/Wrapper";
+import Container from "../Grid/Container";
 
 export default function Error({ black }: { black?: boolean }) {
   return (

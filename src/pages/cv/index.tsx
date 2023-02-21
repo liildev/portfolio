@@ -1,10 +1,19 @@
+import Link from "next/link";
 import { Fragment } from "react";
 import { useWhite } from "@/hooks";
-import { cvMeta, skills } from "@/constants";
-import { SEO, Block, Content, Wrapper, Container } from "@/components";
+import { cvMeta, experiences, skills, summaries } from "@/constants";
+import {
+  SEO,
+  Block,
+  Stack,
+  Content,
+  Wrapper,
+  Container,
+  Typography,
+} from "@/components";
 
 export default function CV() {
-  const {  title, description } = cvMeta();
+  const { title, description } = cvMeta();
 
   useWhite();
 
@@ -16,88 +25,41 @@ export default function CV() {
         <Container>
           <Wrapper>
             <Block>
-              {/* <h2>Resume</h2>   */}
-              <h2>Coming soon</h2>
+              <h2>Resume</h2>
             </Block>
 
-            {/* <Block>
-              <p className="medium-size">Tashkent, Uzbekistan</p>
+            <Block>
+              <Typography>Tashkent, Uzbekistan</Typography>
             </Block>
 
             <Content>
-              <h4>Summary</h4>
+              <h4>Summaries</h4>
 
-              <ul>
-                <li>
-                  About a year of industry experience in Frontend and Backend
-                  Development.
-                </li>
-                <li>
-                  Top skills include React and Node. Experienced working in
-                  fast-paced, Agile, and Scrum project management methodologies.
-                </li>
-                <li>
-                  Strong design, coding, and debugging skills using JavaScript
-                  and its technology.
-                </li>
-                <li>
-                  Solid understanding of algorithms, data structures, and
-                  object-oriented programming.
-                </li>
-                <li>
-                  Experience working with APIs. Collaborated with backend
-                  engineers to develop REST API contracts
-                </li>
-                <li>
-                  Experience working with a collaboration team on GitHub and
-                  GIT.
-                </li>
-              </ul>
+              <Stack data={summaries} />
+            </Content>
 
-              <h4>Work Expreience</h4>
+            <Content>
+              <h4>Expreience</h4>
 
-              <div className="flex items-center justify-between">
-                <b className="font-bold text-xl">Mentor assistant</b>
-                <em>August 2022 - Present</em>
-              </div>
+              {experiences.map(({ id, title, time, lists }) => (
+                <Stack key={id} time={time} data={lists}>
+                  {title}
+                </Stack>
+              ))}
 
-              <ul>
-                <li>
-                  Trained group students includes 20-30 members in using Full
-                  Stack Web Development course
-                </li>
-                <li>
-                  Providing students with an hour of practice after the lesson
-                  on topics covered
-                </li>
-                <li>
-                  At the end of each month, take tests from students according
-                  to the criteria and provide feedback on their results
-                </li>
-                <li>
-                  Individual work with students who have difficulties learning a
-                  lesson
-                </li>
-                <li>
-                  Discussed and solved about 100 simple and medium tasks from
-                  Leetcode and Codewars
-                </li>
-              </ul>
+              <Link href="/contact" className="link">
+                Contact
+              </Link>
+              <Link href="/work" className="link">
+                Projects
+              </Link>
 
-              <h4>Projects</h4>
-
-              <h4>Skills</h4>
-
-              <div className="flex flex-wrap justify-center gap-3">
-                {skills.map(({ name, url }) => (
-                  <img
-                    src={url}
-                    className="max-w-[80px] max-h-[50px] grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition ease-out duration-300 object-contain"
-                    alt={name}
-                  />
+              <blockquote>
+                {skills.map(({ name }) => (
+                  <b key={name}>{name}</b>
                 ))}
-              </div>
-            </Content> */}
+              </blockquote>
+            </Content>
           </Wrapper>
         </Container>
       </div>

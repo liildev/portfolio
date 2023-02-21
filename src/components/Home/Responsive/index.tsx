@@ -1,14 +1,15 @@
 import Link from "next/link";
 import Text from "../Text";
 import Label from "../Label";
-import Block from "../../Block";
+import { Fragment } from "react";
 import { IResponsive } from "typings";
+import { Block, Typography } from "@/components";
 
 export default function Responsive({ mobile, toggle }: IResponsive) {
   return (
-    <h1>
+    <Typography h1>
       {mobile ? (
-        <>
+        <Fragment>
           <Block>
             <Text>Hello.</Text>
           </Block>
@@ -18,9 +19,9 @@ export default function Responsive({ mobile, toggle }: IResponsive) {
           <Block>
             <Text third>Liil Dev</Text>
           </Block>
-        </>
+        </Fragment>
       ) : (
-        <>
+        <Fragment>
           <Link href="/about">
             <Block>
               <Label hello />
@@ -48,8 +49,8 @@ export default function Responsive({ mobile, toggle }: IResponsive) {
               </Text>
             </Block>
           </Link>
-        </>
+        </Fragment>
       )}
-    </h1>
+    </Typography>
   );
 }

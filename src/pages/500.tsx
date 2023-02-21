@@ -1,13 +1,13 @@
-import { Block, Wrapper, Container } from "@/components";
+import { Block, Wrapper, Container, Typography } from "@/components";
 
 export default function ServerError() {
   return (
     <Container>
       <Wrapper>
         <Block>
-          <h2>Something went wrong</h2>
-          
-          <p className="small-size">Please, try again later</p>
+          <Typography h2>Something went wrong</Typography>
+
+          <Typography small>Please, try again later</Typography>
         </Block>
       </Wrapper>
     </Container>

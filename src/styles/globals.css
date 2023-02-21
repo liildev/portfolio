@@ -9,7 +9,6 @@
   font-style: normal;
 }
 
-
 @font-face {
   font-family: "Metropolis";
   src: url("/fonts/Metropolis-SemiBold.otf") format("opentype");
@@ -63,7 +62,7 @@
   }
 
   h2 {
-    @apply font-bold -tracking-[2px] text-2em sx:text-2.2em leading-120 animate;
+    @apply font-bold -tracking-[2px] text-2.2em leading-120 animate;
   }
 
   h4 {
@@ -75,20 +74,20 @@
   }
 
   p {
-    @apply font-normal text-md sx:text-lg leading-160 sx:leading-170 mb-[3vh];
+    @apply font-normal text-sm sx:text-base sm:text-lg leading-160 sx:leading-170 mb-[3vh];
   }
 
   b {
-    @apply font-medium text-md sx:text-lg;
+    @apply font-medium text-sm sx:text-base sm:text-lg;
   }
 
   em {
-    @apply text-sm sm:text-md text-gray-200;
+    @apply text-base text-gray-200;
   }
 
   blockquote {
-    @apply text-lg flex flex-wrap items-center gap-2 my-[6vmin];
-    @apply py-2 px-4 border-l-4 text-gray border-gray-100;
+    @apply flex flex-wrap items-center gap-2 my-[6vmin];
+    @apply py-2 px-4 text-gray border-l-4 border-gray-100;
   }
 
   img {
@@ -96,7 +95,7 @@
   }
 
   ul {
-    @apply leading-150 sm:leading-170 text-md sm:text-lg my-[2vh] list-disc ml-[2vh];
+    @apply leading-150 sm:leading-170 text-sm sx:text-base sm:text-lg my-[2vh] list-disc ml-[2vh];
   }
 }
 
@@ -114,6 +113,10 @@
     @apply relative block overflow-y-hidden;
   }
 
+  .large-size {
+    @apply text-xl sm:text-2xl leading-160 mb-[4vh];
+  }
+
   .medium-size {
     @apply text-base sm:text-xl leading-170 animate text-gray;
   }
@@ -124,7 +127,7 @@
 
   .link {
     @apply cursor-pointer block text-red font-semibold;
-    @apply on-hover-40 my-2 text-md sm:text-[19px];
+    @apply on-hover-40 my-2 text-base sx:text-[19px];
   }
 
   /* ------ Hover states ------ */
@@ -200,6 +203,14 @@
   /*	=====================================================================
 							WORKPAGE							
 	===================================================================== */
+  .stack {
+    @apply flex flex-col sm:flex-row items-start justify-between;
+  }
+
+  .stack-heading {
+    @apply font-bold text-xl;
+  }
+
   .work-block {
     @apply on-hover-40 my-[12vh];
   }

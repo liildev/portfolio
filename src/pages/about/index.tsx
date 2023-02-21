@@ -1,7 +1,14 @@
 import Link from "next/link";
 import { Fragment } from "react";
 import { aboutMeta } from "@/constants";
-import { SEO, Block, Content, Wrapper, Container } from "@/components";
+import {
+  SEO,
+  Block,
+  Content,
+  Wrapper,
+  Container,
+  Typography,
+} from "@/components";
 
 export default function About() {
   const { title, description } = aboutMeta();
@@ -13,16 +20,16 @@ export default function About() {
       <Container>
         <Wrapper>
           <Block>
-            <h2>I build functional web apps</h2>
+            <Typography h2>I build functional web apps</Typography>
           </Block>
 
           <Content>
-            <h4>About</h4>
+            <Typography h4>About</Typography>
 
-            <p className="medium-size text-white">
+            <Typography large>
               Hi, I&apos;m Nozim. I&apos;m a full stack developer, specialized
-              in development of web applications using React, Node & more.
-            </p>
+              in development of web apps using React, Node & more.
+            </Typography>
 
             <p>
               You can also call me a front-end, back-end or software developer.
