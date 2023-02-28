@@ -28,7 +28,7 @@ const initialState: workState = {
   error: false,
 };
 
-export const workReducer = createReducer(initialState, (builder) => {
+const workReducer = createReducer(initialState, (builder) => {
   // Get All
   builder
     .addCase(getWorks.pending, (state) => {
