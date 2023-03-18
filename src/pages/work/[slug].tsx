@@ -1,9 +1,7 @@
 import { ISlug } from "typings";
 import { urlFor } from "@/libs";
-import { useRouter } from "next/router";
-import { Fragment, useEffect } from "react";
-import { getWork, workSelector } from "@/redux";
-import { useWhite, useAppDispatch, useAppSelector } from "@/hooks";
+import { Fragment } from "react";
+import { useSlug, useWhite } from "@/hooks";
 
 import {
   SEO,
@@ -18,18 +16,7 @@ import {
 } from "@/components";
 
 export default function Slug() {
-  const dispatch = useAppDispatch();
-
-  const {
-    query: { slug },
-    isReady,
-  } = useRouter();
-
-  const {
-    data: { work },
-    loading,
-    error,
-  } = useAppSelector(workSelector);
+  const { work, error, loading } = useSlug();
 
   const {
     img,
@@ -45,12 +32,6 @@ export default function Slug() {
 
   useWhite();
 
-  useEffect(() => {
-    if (isReady) {
-      dispatch(getWork(slug));
-    }
-  }, [dispatch, isReady, slug]);
-
   if (loading) return;
 
   if (error) return <Error black />;
@@ -63,7 +44,7 @@ export default function Slug() {
         <Container>
           <Wrapper>
             <Block>
-              <Typography h2>{title}</Typography>
+              <Typography level={2}>{title}</Typography>
             </Block>
 
             <Block>
@@ -75,7 +56,7 @@ export default function Slug() {
             )}
 
             <Content>
-              <Typography h4>About</Typography>
+              <Typography level={4}>About</Typography>
 
               <p>{about}</p>
 

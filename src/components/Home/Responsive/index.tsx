@@ -7,44 +7,44 @@ import { Block, Typography } from "@/components";
 
 export default function Responsive({ mobile, toggle }: IResponsive) {
   return (
-    <Typography h1>
+    <Typography level={1}>
       {mobile ? (
         <Fragment>
           <Block>
-            <Text>Hello.</Text>
+            <Text level={1}>Hello.</Text>
           </Block>
           <Block>
-            <Text second>I am</Text>
+            <Text level={2}>I am</Text>
           </Block>
           <Block>
-            <Text third>Liil Dev</Text>
+            <Text level={3}>Liil Dev</Text>
           </Block>
         </Fragment>
       ) : (
         <Fragment>
           <Link href="/about">
             <Block>
-              <Label hello />
+              <Label title="hello" />
 
-              <Text desktop toggle={toggle}>
+              <Text desktop level={1} toggle={toggle}>
                 About
               </Text>
             </Block>
           </Link>
           <Link href="/work">
             <Block>
-              <Label />
+              <Label title="me" />
 
-              <Text desktop second toggle={toggle}>
+              <Text desktop level={2} toggle={toggle}>
                 Work
               </Text>
             </Block>
           </Link>
           <Link href="/contact">
             <Block>
-              <Label dev />
+              <Label title="dev" />
 
-              <Text desktop third toggle={toggle}>
+              <Text desktop level={3} toggle={toggle}>
                 Contact
               </Text>
             </Block>

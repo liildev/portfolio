@@ -20,13 +20,13 @@ export default function About() {
       <Container>
         <Wrapper>
           <Block>
-            <Typography h2>I build functional web apps</Typography>
+            <Typography level={2}>I build functional web apps</Typography>
           </Block>
 
           <Content>
-            <Typography h4>About</Typography>
+            <Typography level={4}>About</Typography>
 
-            <Typography large>
+            <Typography size="large">
               Hi, I&apos;m Nozim. I&apos;m a full stack developer, specialized
               in development of web apps using React, Node & more.
             </Typography>

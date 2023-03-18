@@ -25,7 +25,7 @@ export default function CV() {
         <Container>
           <Wrapper>
             <Block>
-              <h2>Resume</h2>
+              <Typography level={2}>Resume</Typography>
             </Block>
 
             <Block>
@@ -33,13 +33,13 @@ export default function CV() {
             </Block>
 
             <Content>
-              <h4>Summaries</h4>
+              <Typography level={4}>Summaries</Typography>
 
               <Stack data={summaries} />
             </Content>
 
             <Content>
-              <h4>Expreience</h4>
+              <Typography level={4}>Experience</Typography>
 
               {experiences.map(({ id, title, time, lists }) => (
                 <Stack key={id} time={time} data={lists}>

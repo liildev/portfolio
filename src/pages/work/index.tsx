@@ -1,8 +1,7 @@
 import Link from "next/link";
+import { Fragment } from "react";
+import { useWorks } from "@/hooks";
 import { workMeta } from "@/constants";
-import { Fragment, useEffect } from "react";
-import { getWorks, workSelector } from "@/redux";
-import { useAppDispatch, useAppSelector } from "@/hooks";
 import {
   SEO,
   Block,
@@ -13,18 +12,8 @@ import {
 } from "@/components";
 
 export default function Work() {
-  const dispatch = useAppDispatch();
   const { title, description } = workMeta();
-
-  const {
-    data: { works },
-    loading,
-    error,
-  } = useAppSelector(workSelector);
-
-  useEffect(() => {
-    dispatch(getWorks());
-  }, [dispatch]);
+  const { works, loading, error } = useWorks();
 
   if (loading) return;
 
@@ -40,9 +29,9 @@ export default function Work() {
             <div key={_id} className="work-block">
               <Link href={`/work/${title.toLowerCase()}`} scroll={true}>
                 <Block>
-                  <Typography h2>{title}</Typography>
+                  <Typography level={2}>{title}</Typography>
 
-                  <Typography small>{sub_title}</Typography>
+                  <Typography size="small">{sub_title}</Typography>
                 </Block>
               </Link>
             </div>

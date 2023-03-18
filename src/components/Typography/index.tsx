@@ -1,26 +1,22 @@
 import { ITypography } from "typings";
 
-export default function Typography({
-  h1,
-  h2,
-  h3,
-  h4,
-  small,
-  large,
-  children,
-}: ITypography) {
-  return h1 ? (
+export default function Typography({ size, level, children }: ITypography) {
+  return level === 1 ? (
     <h1>{children}</h1>
-  ) : h2 ? (
+  ) : level === 2 ? (
     <h2>{children}</h2>
-  ) : h3 ? (
+  ) : level === 3 ? (
     <h3>{children}</h3>
-  ) : h4 ? (
+  ) : level === 4 ? (
     <h4>{children}</h4>
   ) : (
     <p
       className={`${
-        small ? "small-size" : large ? "large-size" : "medium-size"
+        size === "small"
+          ? "small-size"
+          : size === "large"
+          ? "large-size"
+          : "medium-size"
       }`}
     >
       {children}

@@ -1,10 +1,12 @@
-import { ILabel } from "typings";
-
-export default function Label({ dev, hello }: ILabel) {
+export default function Label({ title }: {title: string}) {
   return (
     <div
       className={`on-hover-40 hidden md:block animate ${
-        hello ? "label-hello" : dev ? "label-liildev delay08" : "label-iam delay04"
+        title === "hello"
+          ? "label-hello"
+          : title === "dev"
+          ? "label-liildev delay08"
+          : title === "me" && "label-iam delay04"
       }`}
     />
   );

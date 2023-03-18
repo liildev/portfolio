@@ -19,11 +19,11 @@ export default function Contact() {
       <Container>
         <Wrapper>
           <Block>
-            <Typography h2>Let&apos;s make something great!</Typography>
+            <Typography level={2}>Let&apos;s make something great!</Typography>
           </Block>
 
           <Content>
-            <Typography h4>Contact</Typography>
+            <Typography level={4}>Contact</Typography>
 
             <p>
               I&apos;m seeking out opportunities to collaborate with companies /

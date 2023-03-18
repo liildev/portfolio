@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        metropolis: ["Metropolis"],
+        metropolis: ["Metropolis", "sans-serif"],
       },
 
       fontSize: {

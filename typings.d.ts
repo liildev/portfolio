@@ -35,26 +35,16 @@ interface IContainer {
 }
 
 interface ITypography {
-  h1?: boolean;
-  h2?: boolean;
-  h3?: boolean;
-  h4?: boolean;
-  small?: boolean;
-  large?: boolean;
+  size?: string;
+  level?: number;
   children: ReactNode;
 }
 
 interface IText {
-  third?: boolean;
-  second?: boolean;
+  level?: number;
   toggle?: boolean;
   desktop?: boolean;
   children: ReactNode;
-}
-
-interface ILabel {
-  dev?: boolean;
-  hello?: boolean;
 }
 
 interface ILink {

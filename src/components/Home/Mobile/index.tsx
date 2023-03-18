@@ -5,15 +5,15 @@ export default function Mobile({ toggle }: { toggle: boolean }) {
   return (
     <Container logo>
       <Center toggle={!toggle}>
-        <Typography h1>
+        <Typography level={1}>
           <Block>
-            <Text>Hello.</Text>
+            <Text level={1}>Hello.</Text>
           </Block>
           <Block>
-            <Text second>I am</Text>
+            <Text level={2}>I am</Text>
           </Block>
           <Block>
-            <Text third>Liil Dev</Text>
+            <Text level={3}>Liil Dev</Text>
           </Block>
         </Typography>
       </Center>
