@@ -5,9 +5,9 @@ export default function ServerError() {
     <Container>
       <Wrapper>
         <Block>
-          <Typography h2>Something went wrong</Typography>
+          <Typography level={2}>Something went wrong</Typography>
 
-          <Typography small>Please, try again later</Typography>
+          <Typography size="small">Please, try again later</Typography>
         </Block>
       </Wrapper>
     </Container>

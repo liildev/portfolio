@@ -5,9 +5,9 @@ export default function NotFound() {
     <Container>
       <Wrapper>
         <Block>
-          <Typography h2>Page not found</Typography>
+          <Typography level={2}>Page not found</Typography>
           
-          <Typography small>Sorry, there is nothing to see here</Typography>
+          <Typography size="small">Sorry, there is nothing to see here</Typography>
         </Block>
       </Wrapper>
     </Container>
