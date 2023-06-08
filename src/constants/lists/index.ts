@@ -29,7 +29,7 @@ const experiences = [
   {
     id: 1,
     title: "Mentor assistant, Najot Ta'lim",
-    time: "June 2022 - Present",
+    time: "June 2022 - Dec 2022",
     lists: [
       {
         id: 1,
@@ -56,7 +56,7 @@ const experiences = [
   {
     id: 2,
     title: "Frontend developer, CodeTech",
-    time: "Dec 2022 - Feb 2023",
+    time: "Dec 2022 - June 2023",
     lists: [
       {
         id: 1,
