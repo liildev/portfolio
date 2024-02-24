@@ -22,6 +22,7 @@ export default function Document() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@liildev" />
 
+        <link rel="canonical" href="https://www.liildev.uz" />
         <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
         <link rel="icon" href="/images/favicon.svg" sizes="any" type="image/svg+xml" />
         <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
