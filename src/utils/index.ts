@@ -1,0 +1,1 @@
+export { getTotalProjects } from "./project";

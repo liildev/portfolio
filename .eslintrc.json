@@ -1,3 +1,46 @@
 {
-  "extends": "next/core-web-vitals"
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "amd": true,
+    "node": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "extends": ["eslint:recommended", "plugin:react/recommended","plugin:@typescript-eslint/recommended", "prettier"],
+  "parserOptions": {
+    "requireConfigFile": false,
+    "babelOptions": {
+      "babelrc": false,
+      "configFile": false,
+      "presets": ["@babel/preset-env"]
+    },
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "prettier", "simple-import-sort"],
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ],
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
+    "react/jsx-props-no-spreading": [
+      1,
+      {
+        "custom": "ignore"
+      }
+    ],
+    "react/jsx-curly-spacing": [2, "never"],
+    "default-param-last": "off",
+    "react/display-name": "off"
+  },
+  "settings": { "import/resolver": { "node": { "paths": ["src"] } }, "react": { "version": "detect" }
+  },
+  "root": true
 }
