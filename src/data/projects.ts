@@ -1,3 +1,73 @@
+export const allProjects = (isOS: boolean) => [
+  {
+    year: "2024",
+    projects: [
+      {
+        title: "USSDQuick",
+        url: isOS
+          ? "https://apps.apple.com/uz/app/ussdquick/id6463426114"
+          : "https://play.google.com/store/apps/details?id=com.coreteam.ussdQuick",
+        active: true,
+      },
+    ],
+  },
+  {
+    year: "2023",
+    projects: [
+      {
+        title: "Student App",
+        url: "https://go.najottalim.uz/",
+        active: true,
+      },
+      {
+        title: "Najot Ta'lim",
+        url: "https://najottalim.uz/",
+        active: true,
+      },
+      {
+        title: "Avto Box",
+        url: "https://www.avto-box.uz/",
+        active: false,
+      },
+      {
+        title: "Education Box",
+        url: "https://educationbox.uz/",
+        active: true,
+      },
+    ],
+  },
+  {
+    year: "2022",
+    projects: [
+      {
+        title: "Apple Store",
+        url: "https://apple-clone-app.vercel.app/",
+        active: true,
+      },
+      {
+        title: "Lyriks",
+        url: "https://lyriks-music.firebaseapp.com/",
+        active: true,
+      },
+      {
+        title: "Metaverse",
+        url: "https://metaverses-app.vercel.app/",
+        active: true,
+      },
+      {
+        title: "Admins",
+        url: "https://adminis-app.vercel.app/",
+        active: true,
+      },
+      {
+        title: "Hoo Bank",
+        url: "https://project-hoobank-app.netlify.app/",
+        active: true,
+      },
+    ],
+  },
+];
+
 export const featuredProjects = [
   {
     year: "2023",
@@ -63,64 +133,6 @@ export const featuredProjects = [
         url: "https://draculatheme.com/pro",
         stats: "$308k+ sales",
         icon: "dracula-pro",
-        active: true,
-      },
-    ],
-  },
-];
-
-export const allProjects = [
-  {
-    year: "2023",
-    projects: [
-      {
-        title: "Student App",
-        url: "https://go.najottalim.uz/",
-        active: true,
-      },
-      {
-        title: "Najot Ta'lim",
-        url: "https://najottalim.uz/",
-        active: true,
-      },
-      {
-        title: "Avto Box",
-        url: "https://www.avto-box.uz/",
-        active: true,
-      },
-      {
-        title: "Education Box",
-        url: "https://educationbox.uz/",
-        active: true,
-      },
-    ],
-  },
-  {
-    year: "2022",
-    projects: [
-      {
-        title: "Apple Store",
-        url: "https://apple-clone-app.vercel.app/",
-        active: true,
-      },
-      {
-        title: "Lyriks",
-        url: "https://lyriks-music.firebaseapp.com/",
-        active: true,
-      },
-      {
-        title: "Metaverse",
-        url: "https://metaverses-app.vercel.app/",
-        active: true,
-      },
-      {
-        title: "Admins",
-        url: "https://adminis-app.vercel.app/",
-        active: true,
-      },
-      {
-        title: "Hoo Bank",
-        url: "https://project-hoobank-app.netlify.app/",
         active: true,
       },
     ],

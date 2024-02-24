@@ -1,10 +1,11 @@
-import { Item } from "./item";
+import { Fragment } from "react";
 import { AllProjects } from "./types";
+import { Item } from "./item";
 
 export const Projects = ({ year, projects }: AllProjects, idx: number) => (
-  <div key={idx}>
+  <Fragment key={idx}>
     <h3>{year}</h3>
 
     <ul>{projects.map(Item)}</ul>
-  </div>
+  </Fragment>
 );

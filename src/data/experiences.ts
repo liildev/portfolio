@@ -1,6 +1,13 @@
 export const experiences = [
   {
     jobTitle: "React Developer",
+    company: "Coreteam",
+    companyUrl: "https://coreteam.uz",
+    startDate: "2023-09-01",
+    location: "Tashkent, Darkhan",
+  },
+  {
+    jobTitle: "React Developer",
     company: "Abutech",
     companyUrl: "https://abutech.uz",
     startDate: "2023-02-01",

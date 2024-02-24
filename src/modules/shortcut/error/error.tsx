@@ -1,11 +1,11 @@
+import { useDetect } from "~/lib";
 import Link from "next/link";
-import { useShortcut } from "../utils";
 import { ButtonPrimary } from "~/ui";
 import { ROUTES } from "~/constants";
 import { Box } from "./styles";
 
 export const Error = ({ code }: { code?: number }) => {
-  const { mounted, isMobile } = useShortcut();
+  const { mounted, isMobile } = useDetect();
   let title = "five hundred";
   let description = "Something isn't right.";
 

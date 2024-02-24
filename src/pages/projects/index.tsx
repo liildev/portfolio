@@ -4,6 +4,7 @@ import { Layout } from "~/modules";
 import { AllProjects } from "~/components";
 import { allProjects } from "~/data";
 import { getTotalProjects } from "~/utils";
+import { useDetect } from "~/lib";
 
 export async function getStaticProps() {
   const props = {
@@ -18,7 +19,8 @@ export async function getStaticProps() {
 }
 
 export default function Projects({ title, image }: Props) {
-  const description = `I'm obsessed with side project and <strong>building in public</strong>. Here you can navigate to <strong>${getTotalProjects(allProjects)} different</strong> websites I've built. Some projects are still active, others have been discontinued.`;
+  const { isOs } = useDetect();
+  const description = `I'm obsessed with side project and <strong>building in public</strong>. Here you can navigate to <strong>${getTotalProjects(allProjects(isOs))} different</strong> websites I've built. Some projects are still active, others have been discontinued.`;
 
   return (
     <>
@@ -29,7 +31,7 @@ export default function Projects({ title, image }: Props) {
 
         <h2>All Projects</h2>
 
-        {allProjects.map(AllProjects)}
+        {allProjects(isOs).map(AllProjects)}
       </LayoutGroup>
     </>
   );
