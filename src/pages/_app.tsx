@@ -7,6 +7,7 @@ import * as ToastPrimitive from "@radix-ui/react-toast";
 import { CommandBar, Scripts } from "~/modules";
 import { Wrapper } from "~/ui";
 import { Footer, Navbar, Toast, Noop } from "~/components";
+import { Analytics } from "@vercel/analytics/react";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   const Layout = (Component as ComponentWithLayout).Layout || Noop;
@@ -25,6 +26,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 
               <Layout>
                 <Component {...pageProps} />
+                <Analytics />
               </Layout>
 
               <Footer />
