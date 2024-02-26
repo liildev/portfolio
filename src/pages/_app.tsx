@@ -26,8 +26,8 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 
               <Layout>
                 <Component {...pageProps} />
-                <Analytics />
               </Layout>
+              <Analytics />
 
               <Footer />
             </Wrapper>
