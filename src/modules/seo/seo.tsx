@@ -16,7 +16,6 @@ export const SEO = ({ title, image, description }: ISeo) => {
 
       <meta property="og:title" content={setTitle(title)} key="ogtitle" />
       <meta property="og:description" content={stripHtml(description)} />
-      <meta property="og:type" content="website" />
       <meta property="og:url" content={`https://liildev.uz${asPath}`} />
       <meta property="og:image" content={`https://liildev.uz/images/${image}`} />
       <meta property="og:image:secure_url" content={`https://liildev.uz/images/${image}`} />

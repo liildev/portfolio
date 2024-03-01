@@ -8,6 +8,7 @@ import { CommandBar, Scripts } from "~/modules";
 import { Wrapper } from "~/ui";
 import { Footer, Navbar, Toast, Noop } from "~/components";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   const Layout = (Component as ComponentWithLayout).Layout || Noop;
@@ -27,7 +28,9 @@ export default function MyApp({ Component, pageProps }: AppProps) {
               <Layout>
                 <Component {...pageProps} />
               </Layout>
+
               <Analytics />
+              <SpeedInsights />
 
               <Footer />
             </Wrapper>
