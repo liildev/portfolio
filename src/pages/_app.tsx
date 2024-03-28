@@ -9,6 +9,7 @@ import { Wrapper } from "~/ui";
 import { Footer, Navbar, Toast, Noop } from "~/components";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Suspense } from "react";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   const Layout = (Component as ComponentWithLayout).Layout || Noop;
@@ -34,9 +35,10 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 
               <Footer />
             </Wrapper>
-
-            <Toast />
           </CommandBar>
+          <Suspense fallback={<>loading</>}>
+            <Toast />
+          </Suspense>
         </ToastPrimitive.Provider>
       </ToastProvider>
     </>
