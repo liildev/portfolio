@@ -17,10 +17,12 @@ export const allProjects = (isOS: boolean) => [
       {
         title: "ServiceAgent",
         active: false,
+        url: "",
       },
       {
         title: "Agrota Market",
         active: false,
+        url: "",
       },
       {
         title: "USSDQuick",
