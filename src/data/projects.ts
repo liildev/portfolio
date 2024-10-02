@@ -3,6 +3,26 @@ export const allProjects = (isOS: boolean) => [
     year: "2024",
     projects: [
       {
+        title: "Let'sTrip (App)",
+        url: isOS
+          ? "https://apps.apple.com/uz/app/letstrip/id6502595522"
+          : "https://play.google.com/store/apps/details?id=com.coreteam.letstrip",
+        active: true,
+      },
+      {
+        title: "Let'sTrip (Web)",
+        url: "https://letstrip.uz",
+        active: true,
+      },
+      {
+        title: "ServiceAgent",
+        active: false,
+      },
+      {
+        title: "Agrota Market",
+        active: false,
+      },
+      {
         title: "USSDQuick",
         url: isOS
           ? "https://apps.apple.com/uz/app/ussdquick/id6463426114"

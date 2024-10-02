@@ -1,6 +1,7 @@
 import "~/styles/index.css";
 import "remixicon/fonts/remixicon.css";
 
+import React, { Suspense } from "react";
 import type { AppProps } from "next/app";
 import { ToastProvider, useRouterChange } from "~/lib";
 import * as ToastPrimitive from "@radix-ui/react-toast";
@@ -35,7 +36,9 @@ export default function MyApp({ Component, pageProps }: AppProps) {
               <Footer />
             </Wrapper>
 
-            <Toast />
+            <Suspense>
+              <Toast />
+            </Suspense>
           </CommandBar>
         </ToastPrimitive.Provider>
       </ToastProvider>
