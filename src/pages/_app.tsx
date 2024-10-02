@@ -35,11 +35,10 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 
               <Footer />
             </Wrapper>
-
-            <Suspense>
-              <Toast />
-            </Suspense>
           </CommandBar>
+          <Suspense>
+            <Toast />
+          </Suspense>
         </ToastPrimitive.Provider>
       </ToastProvider>
     </>
