@@ -1,0 +1,9 @@
+dist
+node_modules
+.next
+build
+public
+scripts
+eslint.config.mjs
+next-env.d.ts
+next.config.ts
