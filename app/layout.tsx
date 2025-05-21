@@ -1,6 +1,7 @@
 import './styles/globals.css';
 import type { Metadata, Viewport } from 'next';
 
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { ReactNode } from 'react';
 
 import { Layout } from '@/components/layout';
@@ -21,6 +22,7 @@ export default function RootLayout({
       <body className={metropolis.className}>
         <Layout>{children}</Layout>
         <Toaster />
+        <SpeedInsights />
       </body>
     </html>
   );
@@ -74,6 +76,9 @@ export const metadata: Metadata = {
       rel: 'apple-touch-icon-precomposed',
       url: '/apple-touch-icon-precomposed.png',
     },
+  },
+  appleWebApp: {
+    title,
   },
   manifest: `${BASE_URL}/manifest.json`,
   verification: {
