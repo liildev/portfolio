@@ -68,7 +68,7 @@ export const TechStack = () => {
           >
             <div className='relative size-full'>
               {position === 0 ? (
-                <Icon className='size-20 sm:size-[88px]' icon={logo} />
+                <Icon className='size-full' icon={logo} />
               ) : (
                 <div
                   className={cn(

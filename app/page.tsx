@@ -1,7 +1,7 @@
 import { ArrowRightIcon } from '@phosphor-icons/react/dist/ssr';
 
 import { CommandBar } from '@/components/command-bar';
-import { TechStack } from '@/components/tech-stack/test';
+import { TechStack } from '@/components/tech-stack';
 import { Button } from '@/components/ui/button';
 
 import { deviceInfo } from './actions';
