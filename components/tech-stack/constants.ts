@@ -9,6 +9,8 @@ export const TECH_LOGOS = [
   'html',
   'jest',
   'jira',
+  'heroui',
+  'nodejs',
   'js',
   'mobx',
   'mui',

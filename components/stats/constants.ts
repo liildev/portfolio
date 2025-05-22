@@ -1,7 +1,6 @@
 export const logos = [
   {
     path: 'html',
-    title: 'HTML',
     top: '90%',
     left: '28%',
     size: 80,
@@ -11,7 +10,6 @@ export const logos = [
   },
   {
     path: 'shadcn',
-    title: 'ShadCN',
     top: '15%',
     left: '25%',
     size: 70,
@@ -21,7 +19,6 @@ export const logos = [
   },
   {
     path: 'js',
-    title: 'JavaScript',
     top: '18%',
     left: '60%',
     size: 75,
@@ -31,7 +28,6 @@ export const logos = [
   },
   {
     path: 'ts',
-    title: 'TypeScript',
     top: '25%',
     left: '90%',
     size: 65,
@@ -41,7 +37,6 @@ export const logos = [
   },
   {
     path: 'vite',
-    title: 'Vite',
     top: '70%',
     left: '10%',
     size: 75,
@@ -51,7 +46,6 @@ export const logos = [
   },
   {
     path: 'next',
-    title: 'Next.js',
     top: '75%',
     left: '85%',
     size: 70,
@@ -61,7 +55,6 @@ export const logos = [
   },
   {
     path: 'zustand',
-    title: 'Zustand',
     top: '50%',
     left: '90%',
     size: 75,
@@ -71,7 +64,6 @@ export const logos = [
   },
   {
     path: 'redux',
-    title: 'Redux',
     top: '85%',
     left: '50%',
     size: 80,
@@ -80,8 +72,7 @@ export const logos = [
     duration: 20,
   },
   {
-    path: 'tanstack',
-    title: 'TanStack',
+    path: 'jira',
     top: '45%',
     left: '20%',
     size: 65,
@@ -91,7 +82,6 @@ export const logos = [
   },
   {
     path: 'sass',
-    title: 'SASS',
     top: '60%',
     left: '70%',
     size: 70,
@@ -100,8 +90,7 @@ export const logos = [
     duration: 19,
   },
   {
-    path: 'tailwind',
-    title: 'Tailwind UI',
+    path: 'gitlab',
     top: '35%',
     left: '10%',
     size: 68,

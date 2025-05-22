@@ -1,11 +1,11 @@
-/* eslint-disable react-hooks/rules-of-hooks */
 'use client';
 
 import { useRef } from 'react';
-import { motion, useScroll, useTransform, useMotionValue } from 'framer-motion';
+import { motion, useScroll } from 'framer-motion';
 
 import { Logos } from './logos';
 import { Text } from './text';
+import { useTextMotionStyle } from './utils';
 
 export const Stats = ({ isMobile }: { isMobile: boolean }) => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -14,24 +14,9 @@ export const Stats = ({ isMobile }: { isMobile: boolean }) => {
     offset: ['start start', 'end start'],
   });
 
-  const createTextMotionStyle = (start: number, end: number) => {
-    if (isMobile) {
-      const opacity = useMotionValue(1);
-      const y = useMotionValue('0%');
-
-      return { opacity, y };
-    }
-
-    const localProgress = useTransform(scrollYProgress, [start, end], [0, 1]);
-    const opacity = useTransform(localProgress, [0, 1], [0, 1]);
-    const y = useTransform(localProgress, [0, 1], ['40%', '0%']);
-
-    return { opacity, y };
-  };
-
-  const firstStat = createTextMotionStyle(0.2, 0.3);
-  const secondStat = createTextMotionStyle(0.4, 0.5);
-  const thirdStat = createTextMotionStyle(0.6, 0.7);
+  const firstStat = useTextMotionStyle(scrollYProgress, 0.1, 0.2, isMobile);
+  const secondStat = useTextMotionStyle(scrollYProgress, 0.4, 0.5, isMobile);
+  const thirdStat = useTextMotionStyle(scrollYProgress, 0.6, 0.7, isMobile);
 
   return (
     <div ref={sectionRef} className='sm:h-[400vh]'>

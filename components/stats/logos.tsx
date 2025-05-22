@@ -1,10 +1,11 @@
 import type { FloatingLogoProps } from '@/types';
 
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 
 import { useMediaQuery } from '@/lib/hooks/use-media-query';
 import { cn } from '@/lib/utils';
+
+import { Icon } from '../icon';
 
 import { logos } from './constants';
 
@@ -19,7 +20,6 @@ export const Logos = () => {
 };
 
 export const FloatingLogo = ({
-  title,
   top,
   left,
   path,
@@ -49,15 +49,10 @@ export const FloatingLogo = ({
         ease: 'easeInOut',
       }}
     >
-      <div className='relative size-13 sm:size-14 md:size-20'>
-        <Image
-          fill
-          priority
-          alt={title}
-          className='size-full rounded-md object-cover sm:rounded-2xl md:rounded-3xl'
-          src={`/logos/${path}.webp`}
-        />
-      </div>
+      <Icon
+        className='size-13 rounded-md sm:size-14 sm:rounded-2xl md:size-20 md:rounded-3xl'
+        icon={path}
+      />
     </motion.div>
   );
 };

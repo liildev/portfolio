@@ -66,18 +66,16 @@ export const TechStack = () => {
               damping: 30,
             }}
           >
-            <div className='relative size-full'>
-              {position === 0 ? (
-                <Icon className='size-full' icon={logo} />
-              ) : (
-                <div
-                  className={cn(
-                    'size-full',
-                    position === 1 ? 'bg-gray-300' : 'bg-gray-100',
-                  )}
-                />
-              )}
-            </div>
+            {position === 0 ? (
+              <Icon className='size-full' icon={logo} />
+            ) : (
+              <div
+                className={cn(
+                  'size-full',
+                  position === 1 ? 'bg-gray-300' : 'bg-gray-100',
+                )}
+              />
+            )}
           </motion.li>
         );
       })}
