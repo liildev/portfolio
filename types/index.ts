@@ -1,6 +1,5 @@
 export interface FloatingLogoProps {
   top: string;
-  title: string;
   left: string;
   path: string;
   xRange: number;
