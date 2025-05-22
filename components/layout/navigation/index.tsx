@@ -34,7 +34,7 @@ export const Navigation = () => {
       <nav className='bg-nav absolute top-2 left-1/2 z-10 mx-auto w-full max-w-[584px] -translate-x-1/2 rounded-[28px] py-2 pr-4 pl-6 backdrop-blur-xl sm:top-6 sm:h-[60px] sm:rounded-full sm:pr-2'>
         <div className='flex size-full items-center justify-between'>
           <Link aria-label='Home' href='/' onClick={handleClickLogo}>
-            <Icon className='h-8 w-full sm:h-9' icon='logo' />
+            <Icon className='size-9' icon='logo' />
           </Link>
 
           <ul className='hidden items-center gap-6 sm:flex'>
