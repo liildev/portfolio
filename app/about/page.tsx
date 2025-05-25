@@ -21,4 +21,4 @@ const About = () => {
 
 export default About;
 
-export const metadata: Metadata = seo(pagesMeta.projects);
+export const metadata: Metadata = seo(pagesMeta.about);

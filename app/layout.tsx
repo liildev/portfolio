@@ -87,6 +87,9 @@ export const metadata: Metadata = {
   facebook: {
     appId: process.env.NEXT_PUBLIC_FACEBOOK_ID as string,
   },
+  other: {
+    google: 'notranslate',
+  },
 };
 
 export const viewport: Viewport = {
