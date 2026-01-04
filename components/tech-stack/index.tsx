@@ -1,18 +1,19 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Image from 'next/image';
-import { useState, useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { cn } from '@/lib/utils';
+
+import { Icon } from '../icon';
 
 import { TECH_LOGOS } from './constants';
 import { shuffle } from './utils';
 
 export const TechStack = () => {
+  const [logos, setLogos] = useState<string[]>(TECH_LOGOS);
   const [activeIndex, setActiveIndex] = useState(0);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
-  const [logos, setLogos] = useState<string[]>(TECH_LOGOS);
 
   useEffect(() => {
     setLogos(shuffle(TECH_LOGOS));
@@ -65,27 +66,16 @@ export const TechStack = () => {
               damping: 30,
             }}
           >
-            <div className='relative size-full'>
-              {position === 0 ? (
-                <Image
-                  fill
-                  alt={`${logo} logo`}
-                  className='object-cover'
-                  loading='eager'
-                  priority={index < 4}
-                  quality={80}
-                  sizes='96px'
-                  src={`/logos/${logo}.webp`}
-                />
-              ) : (
-                <div
-                  className={cn(
-                    'size-full',
-                    position === 1 ? 'bg-gray-300' : 'bg-gray-100',
-                  )}
-                />
-              )}
-            </div>
+            {position === 0 ? (
+              <Icon className='size-full' icon={logo} />
+            ) : (
+              <div
+                className={cn(
+                  'size-full',
+                  position === 1 ? 'bg-gray-300' : 'bg-gray-100',
+                )}
+              />
+            )}
           </motion.li>
         );
       })}

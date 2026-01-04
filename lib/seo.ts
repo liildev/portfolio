@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 
+import { BASE_URL } from './constants';
+
 type Props = {
   title?: string;
   description: string;
@@ -13,21 +15,30 @@ export const seo = ({
   path,
   image,
 }: Props): Metadata => {
+  const url = `${BASE_URL}${path}`;
+  const imageUrl = `${BASE_URL}/${image}`;
+
   return {
     title,
     description,
     alternates: {
-      canonical: path,
+      canonical: url,
     },
     openGraph: {
       title,
       description,
-      url: path,
+      url,
       images: {
-        url: image,
-        width: 1120,
-        height: 1120,
+        url: imageUrl,
+        width: 1200,
+        height: 630,
       },
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [imageUrl],
     },
   };
 };

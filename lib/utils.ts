@@ -1,9 +1,8 @@
-import { clsx, type ClassValue } from 'clsx';
+import { type ClassValue, clsx } from 'clsx';
 import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import { twMerge } from 'tailwind-merge';
-import { UAParser } from 'ua-parser-js';
 
 dayjs.extend(duration);
 dayjs.extend(relativeTime);
@@ -12,17 +11,10 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export function getDeviceInfo(userAgent: string | null | undefined) {
-  const parser = new UAParser(userAgent || '');
-  const os = parser.getOS().name || 'Unknown';
-  const appleOS = ['macos', 'ios', 'ipados'];
-  const isApple = appleOS.includes(os.toLocaleLowerCase());
-  const deviceType = parser.getDevice().type || 'desktop';
+const APPLE_UA_REGEX = /Mac|iPhone|iPad|iPod/i;
 
-  return {
-    isApple,
-    isMobile: deviceType === 'mobile' || deviceType === 'tablet',
-  };
+export function isAppleDevice(userAgent: string | null | undefined): boolean {
+  return APPLE_UA_REGEX.test(userAgent || '');
 }
 
 export const getDuration = (startDate: string, endDate?: string): string => {

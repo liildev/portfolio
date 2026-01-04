@@ -203,4 +203,12 @@
   .animate-scroll-right {
     animation: scroll-right linear infinite;
   }
+
+  .animate-marquee {
+    animation: scroll-left 100s linear infinite;
+  }
+
+  .marquee-container:hover .animate-marquee {
+    animation-play-state: paused;
+  }
 }

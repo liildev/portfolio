@@ -1,9 +1,8 @@
 import type { Metadata } from 'next';
 
 import Image from 'next/image';
-
-import { seo } from '@/lib/seo';
 import { pagesMeta } from '@/lib/meta';
+import { seo } from '@/lib/seo';
 
 export default function Reminder() {
   return (

@@ -1,14 +1,14 @@
 import './styles/globals.css';
-import type { Metadata, Viewport } from 'next';
 
+import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import { ReactNode } from 'react';
-
+import type { Metadata, Viewport } from 'next';
+import type { ReactNode } from 'react';
+import { metropolis } from '@/app/styles/fonts';
 import { Layout } from '@/components/layout';
 import { Toaster } from '@/components/ui/sonner';
 import { BASE_URL } from '@/lib/constants';
 import { pagesMeta } from '@/lib/meta';
-import { metropolis } from '@/app/styles/fonts';
 
 const { title, description } = pagesMeta.main;
 
@@ -17,11 +17,51 @@ export default function RootLayout({
 }: Readonly<{
   children: ReactNode;
 }>) {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'WebSite',
+        '@id': `${BASE_URL}/#website`,
+        url: BASE_URL,
+        name: title,
+        description,
+        publisher: { '@id': `${BASE_URL}/#person` },
+      },
+      {
+        '@type': 'Person',
+        '@id': `${BASE_URL}/#person`,
+        name: title,
+        url: BASE_URL,
+        sameAs: [
+          'https://twitter.com/liildev',
+          'https://github.com/liildev',
+          'https://linkedin.com/in/liildev',
+        ],
+      },
+      {
+        '@type': 'SiteNavigationElement',
+        '@id': `${BASE_URL}/#navigation`,
+        name: 'Main Navigation',
+        hasPart: [
+          { '@type': 'WebPage', name: 'About', url: `${BASE_URL}/about` },
+          { '@type': 'WebPage', name: 'Projects', url: `${BASE_URL}/projects` },
+        ],
+      },
+    ],
+  };
+
   return (
     <html lang='en'>
       <body className={metropolis.className}>
+        <script
+          // biome-ignore lint/security/noDangerouslySetInnerHtml: <false>
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          type='application/ld+json'
+        />
         <Layout>{children}</Layout>
         <Toaster />
+        <Analytics />
         <SpeedInsights />
       </body>
     </html>
@@ -95,6 +135,6 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
+  maximumScale: 5,
+  userScalable: true,
 };

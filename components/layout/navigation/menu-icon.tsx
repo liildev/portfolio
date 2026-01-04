@@ -7,11 +7,13 @@ interface AnimatedMenuIconProps {
 export function AnimatedMenuIcon({ isOpen }: AnimatedMenuIconProps) {
   return (
     <svg
+      aria-labelledby='menu-icon-title'
       height='24px'
       viewBox='0 0 20 20'
       width='24px'
       xmlns='http://www.w3.org/2000/svg'
     >
+      <title id='menu-icon-title'>Menu</title>
       <motion.path
         animate={isOpen ? 'open' : 'closed'}
         d='M4 6H16'

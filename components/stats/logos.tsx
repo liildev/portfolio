@@ -1,9 +1,7 @@
-import type { FloatingLogoProps } from '@/types';
-
 import { motion } from 'framer-motion';
-
 import { useMediaQuery } from '@/lib/hooks/use-media-query';
 import { cn } from '@/lib/utils';
+import type { FloatingLogoProps } from '@/types';
 
 import { Icon } from '../icon';
 
@@ -13,7 +11,7 @@ export const Logos = () => {
   return (
     <div className='pointer-events-none absolute inset-0 overflow-hidden'>
       {logos.map((logo, index) => (
-        <FloatingLogo key={index} {...logo} />
+        <FloatingLogo key={`${logo.duration}-${index}`} {...logo} />
       ))}
     </div>
   );

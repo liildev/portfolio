@@ -1,26 +1,26 @@
 'use client';
 
-import { useRef } from 'react';
 import { motion, useScroll } from 'framer-motion';
+import { useRef } from 'react';
 
 import { Logos } from './logos';
 import { Text } from './text';
 import { useTextMotionStyle } from './utils';
 
-export const Stats = ({ isMobile }: { isMobile: boolean }) => {
+export const Stats = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: ['start start', 'end start'],
+    offset: ['start start', 'end end'],
   });
 
-  const firstStat = useTextMotionStyle(scrollYProgress, 0.1, 0.2, isMobile);
-  const secondStat = useTextMotionStyle(scrollYProgress, 0.4, 0.5, isMobile);
-  const thirdStat = useTextMotionStyle(scrollYProgress, 0.6, 0.7, isMobile);
+  const firstStat = useTextMotionStyle(scrollYProgress, 0, 0.33);
+  const secondStat = useTextMotionStyle(scrollYProgress, 0.25, 0.58);
+  const thirdStat = useTextMotionStyle(scrollYProgress, 0.5, 0.83);
 
   return (
-    <div ref={sectionRef} className='sm:h-[400vh]'>
-      <section className='sticky top-0 grid h-[60vh] place-items-center overflow-hidden sm:h-screen'>
+    <div ref={sectionRef} className='relative h-[300vh]'>
+      <section className='sticky top-0 grid h-screen place-items-center overflow-hidden'>
         <Logos />
 
         <div className='relative z-10 text-center'>

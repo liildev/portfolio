@@ -1,5 +1,5 @@
-import { Item } from './item';
 import { bottomRow, middleRow, topRow } from './constant';
+import { Item } from './item';
 
 export function LogoCloud() {
   return (

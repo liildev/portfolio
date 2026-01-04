@@ -1,8 +1,7 @@
 'use client';
 
-import type { LogoRowProps } from '@/types';
-
 import { motion } from 'framer-motion';
+import type { LogoRowProps } from '@/types';
 
 import { Icon } from '../icon';
 

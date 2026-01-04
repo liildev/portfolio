@@ -1,28 +1,59 @@
-export { default as antd } from './antd.svg';
-export { default as clickup } from './clickup.svg';
-export { default as css } from './css.svg';
-export { default as docker } from './docker.svg';
-export { default as github } from './github.svg';
-export { default as gitlab } from './gitlab.svg';
-export { default as graphql } from './graphql.svg';
-export { default as heroui } from './heroui.svg';
-export { default as html } from './html.svg';
-export { default as jest } from './jest.svg';
-export { default as jira } from './jira.svg';
-export { default as js } from './js.svg';
-export { default as logo } from './logo.svg';
-export { default as mobx } from './mobx.svg';
-export { default as mui } from './mui.svg';
-export { default as next } from './next.svg';
-export { default as nodejs } from './nodejs.svg';
-export { default as react } from './react.svg';
-export { default as redux } from './redux.svg';
-export { default as remix } from './remix.svg';
-export { default as sass } from './sass.svg';
-export { default as shadcn } from './shadcn.svg';
-export { default as tanstack } from './tanstack.svg';
-export { default as tailwind } from './tailwind.svg';
-export { default as ts } from './ts.svg';
-export { default as vite } from './vite.svg';
-export { default as vitest } from './vitest.svg';
-export { default as zustand } from './zustand.svg';
+import antd from './antd.svg';
+import clickup from './clickup.svg';
+import css from './css.svg';
+import docker from './docker.svg';
+import github from './github.svg';
+import gitlab from './gitlab.svg';
+import graphql from './graphql.svg';
+import heroui from './heroui.svg';
+import html from './html.svg';
+import jest from './jest.svg';
+import jira from './jira.svg';
+import js from './js.svg';
+import logo from './logo.svg';
+import mobx from './mobx.svg';
+import mui from './mui.svg';
+import next from './next.svg';
+import nodejs from './nodejs.svg';
+import react from './react.svg';
+import redux from './redux.svg';
+import remix from './remix.svg';
+import sass from './sass.svg';
+import shadcn from './shadcn.svg';
+import tailwind from './tailwind.svg';
+import tanstack from './tanstack.svg';
+import ts from './ts.svg';
+import vite from './vite.svg';
+import vitest from './vitest.svg';
+import zustand from './zustand.svg';
+
+export const icons = {
+  antd,
+  clickup,
+  css,
+  docker,
+  github,
+  gitlab,
+  graphql,
+  heroui,
+  html,
+  jest,
+  jira,
+  js,
+  logo,
+  mobx,
+  mui,
+  next,
+  nodejs,
+  react,
+  redux,
+  remix,
+  sass,
+  shadcn,
+  tailwind,
+  tanstack,
+  ts,
+  vite,
+  vitest,
+  zustand,
+};

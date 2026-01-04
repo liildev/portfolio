@@ -1,61 +1,63 @@
 'use client';
 
-import { Dot } from '@phosphor-icons/react/dist/ssr';
 import dayjs from 'dayjs';
 import Image from 'next/image';
-import Link from 'next/link';
-
 import { getDuration } from '@/lib/utils';
-
 import { experiences } from './constants';
 
 export const Career = () => (
-  <section className='container grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3'>
-    {experiences.map((item, idx) => (
-      <figure
-        key={idx}
-        className='flex h-fit w-full break-inside-avoid flex-col gap-y-4 rounded-md border p-4'
+  <section className='container flex flex-wrap justify-center gap-4'>
+    {experiences.map((item) => (
+      <article
+        key={item.company}
+        className='flex w-full flex-col gap-y-4 rounded-md border p-4 md:w-[calc(50%-0.5rem)] xl:w-[calc(33.333%-0.75rem)]'
       >
-        <figcaption className='item-center flex gap-x-3'>
-          <div className='relative size-10'>
+        <header className='flex items-center gap-x-3'>
+          <div className='relative size-10 overflow-hidden rounded-full bg-gray-100'>
             <Image
               fill
               priority
               alt={item.company}
-              className='size-full rounded-full object-cover'
+              className='size-full object-cover'
               src={`/logos/${item.logoUrl}.webp`}
             />
           </div>
           <div>
             <h3 className='font-semibold'>{item.jobTitle}</h3>
-            <span className='text-muted-foreground flex items-center text-sm'>
-              <Link
-                className='hover:underline'
-                href={item.companyUrl}
-                target='_blank'
-              >
-                {item.company}
-              </Link>
-              <Dot size={24} weight='bold' />
+            <p className='text-muted-foreground flex items-center gap-1 text-sm'>
+              {item.companyUrl ? (
+                <a
+                  className='hover:underline'
+                  href={item.companyUrl}
+                  rel='noopener noreferrer'
+                  target='_blank'
+                  title={`Visit ${item.company}`}
+                >
+                  {item.company}
+                </a>
+              ) : (
+                item.company
+              )}
+              <span aria-hidden='true'>·</span>
               {item.location}
-            </span>
+            </p>
           </div>
-        </figcaption>
-        <blockquote className='font-medium'>{item.description}</blockquote>
+        </header>
 
-        <span className='flex items-center justify-end'>
-          <time>{dayjs(item.startDate).format('MMM YYYY')}</time>
+        <p className='font-medium'>{item.description}</p>
 
-          <p> – </p>
-
-          <time>
+        <footer className='mt-auto flex items-center justify-end gap-1'>
+          <time dateTime={item.startDate}>
+            {dayjs(item.startDate).format('MMM YYYY')}
+          </time>
+          <span>–</span>
+          <time dateTime={item.endDate}>
             {item.endDate ? dayjs(item.endDate).format('MMM YYYY') : 'Present'}
           </time>
-          <Dot size={24} weight='bold' />
-
-          <p>{getDuration(item.startDate, item.endDate)}</p>
-        </span>
-      </figure>
+          <span aria-hidden='true'>·</span>
+          <span>{getDuration(item.startDate, item.endDate)}</span>
+        </footer>
+      </article>
     ))}
   </section>
 );

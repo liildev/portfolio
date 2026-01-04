@@ -2,6 +2,6 @@
 
 import { Alert } from '@/components/alert';
 
-const Error = () => <Alert />;
+const ErrorPage = () => <Alert />;
 
-export default Error;
+export default ErrorPage;

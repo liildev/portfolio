@@ -13,26 +13,26 @@ export const projects = (isOS: boolean) => [
     url: 'https://letstrip.uz',
     active: true,
   },
-  {
-    title: 'ServiceAgent',
-    image: '/projects/service-agent.webp',
-    active: false,
-    url: '',
-  },
-  {
-    title: 'Agrota Market',
-    image: '/projects/agrota.webp',
-    active: false,
-    url: '',
-  },
-  {
-    title: 'USSDQuick',
-    image: '/projects/ussd-quick.webp',
-    url: isOS
-      ? 'https://apps.apple.com/uz/app/ussdquick/id6463426114'
-      : 'https://play.google.com/store/apps/details?id=com.coreteam.ussdQuick',
-    active: true,
-  },
+  // {
+  //   title: 'ServiceAgent',
+  //   image: '/projects/service-agent.webp',
+  //   active: false,
+  //   url: '',
+  // },
+  // {
+  //   title: 'Agrota Market',
+  //   image: '/projects/agrota.webp',
+  //   active: false,
+  //   url: '',
+  // },
+  // {
+  //   title: 'USSDQuick',
+  //   image: '/projects/ussd-quick.webp',
+  //   url: isOS
+  //     ? 'https://apps.apple.com/uz/app/ussdquick/id6463426114'
+  //     : 'https://play.google.com/store/apps/details?id=com.coreteam.ussdQuick',
+  //   active: true,
+  // },
   {
     title: 'Student App',
     image: '/projects/student-app.webp',
@@ -45,18 +45,18 @@ export const projects = (isOS: boolean) => [
     url: 'https://najottalim.uz/',
     active: true,
   },
-  {
-    title: 'Avto Box',
-    image: '/projects/avtobox.webp',
-    url: 'https://www.avto-box.uz/',
-    active: false,
-  },
-  {
-    title: 'Education Box',
-    image: '/projects/educationbox.webp',
-    url: 'https://educationbox.uz/',
-    active: true,
-  },
+  // {
+  //   title: 'Avto Box',
+  //   image: '/projects/avtobox.webp',
+  //   url: 'https://www.avto-box.uz/',
+  //   active: false,
+  // },
+  // {
+  //   title: 'Education Box',
+  //   image: '/projects/educationbox.webp',
+  //   url: 'https://educationbox.uz/',
+  //   active: true,
+  // },
   {
     title: 'Apple Store',
     image: '/projects/apple-store.webp',

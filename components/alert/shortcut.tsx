@@ -1,6 +1,6 @@
 'use client';
 
-import { ArrowRight } from '@phosphor-icons/react';
+import { ArrowRightIcon } from '@phosphor-icons/react';
 import { useRouter } from 'next/navigation';
 import { useEffect, useRef } from 'react';
 
@@ -41,9 +41,9 @@ export const Shortcut = () => {
           Press <kbd>G</kbd> <kbd>H</kbd> to go home
         </>
       )}
-      <div className='rounded-full bg-neutral-200 p-1'>
-        <ArrowRight size={10} weight='bold' />
-      </div>
+      <span className='rounded-full bg-neutral-200 p-1'>
+        <ArrowRightIcon size={10} weight='bold' />
+      </span>
     </>
   );
 };

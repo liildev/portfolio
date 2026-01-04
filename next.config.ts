@@ -1,6 +1,16 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+	experimental: {
+    optimizeCss: true,
+    optimizeServerReact: true,
+    turbopackFileSystemCacheForDev: false,
+    optimizePackageImports: [
+			'@phosphor-icons/react',
+			'dayjs',
+      'framer-motion',
+    ],
+  },
 	turbopack: {
 		rules: {
 			'*.svg': {

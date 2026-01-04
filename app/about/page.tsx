@@ -1,4 +1,4 @@
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 
 import { Career } from '@/components/career';
 import { LogoCloud } from '@/components/logo-cloud';
@@ -12,6 +12,7 @@ const About = () => {
 
       <p className='desc'>{pagesMeta.projects.description}</p>
 
+      <h2 className='sr-only'>Experience</h2>
       <Career />
 
       <LogoCloud />

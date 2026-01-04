@@ -1,9 +1,9 @@
 import {
+  ClockCountdown,
   Code,
   Copy,
-  ClockCountdown,
-  Lightbulb,
   House,
+  Lightbulb,
   UserCircle,
 } from '@phosphor-icons/react/dist/ssr';
 import { useRouter } from 'next/navigation';

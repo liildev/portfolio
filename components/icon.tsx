@@ -1,6 +1,6 @@
-import * as icons from '@/lib/assets';
+import { icons } from '@/lib/assets';
 import { cn } from '@/lib/utils';
-import { TIconProps } from '@/types';
+import type { TIconProps } from '@/types';
 
 export const Icon = ({ icon, className }: TIconProps) => {
   const IconComponent = icons[icon as keyof typeof icons];

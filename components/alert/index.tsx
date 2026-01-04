@@ -1,9 +1,6 @@
 import Link from 'next/link';
-
 import { ROUTES } from '@/lib/constants';
-
 import { Button } from '../ui/button';
-
 import { Shortcut } from './shortcut';
 
 export const Alert = ({ code }: { code?: number }) => {

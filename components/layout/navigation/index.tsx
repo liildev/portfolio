@@ -1,25 +1,38 @@
 'use client';
 
-import { Command } from '@phosphor-icons/react/dist/ssr';
-import { motion, AnimatePresence } from 'framer-motion';
+import { CommandIcon } from '@phosphor-icons/react/dist/ssr';
+import { AnimatePresence, motion } from 'framer-motion';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
-
+import { useEffect, useRef, useState } from 'react';
 import { CommandBar } from '@/components/command-bar';
+import { Icon } from '@/components/icon';
 import { Button } from '@/components/ui/button';
 import { useMediaQuery } from '@/lib/hooks/use-media-query';
-import { Icon } from '@/components/icon';
-
-import { AnimatedMenuIcon } from './menu-icon';
 import { NAV_LINKS } from './constants';
+import { AnimatedMenuIcon } from './menu-icon';
 
 export const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const isMobile = useMediaQuery('(max-width: 640px)');
+  const navRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     if (!isMobile) setIsMenuOpen(false);
   }, [isMobile]);
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (navRef.current && !navRef.current.contains(e.target as Node)) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    if (isMenuOpen) {
+      document.addEventListener('click', handleClickOutside);
+    }
+
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, [isMenuOpen]);
 
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
 
@@ -31,7 +44,10 @@ export const Navigation = () => {
 
   return (
     <header className='sticky top-0 z-10 mx-6'>
-      <nav className='bg-nav absolute top-2 left-1/2 z-10 mx-auto w-full max-w-[584px] -translate-x-1/2 rounded-[28px] py-2 pr-4 pl-6 backdrop-blur-xl sm:top-6 sm:h-[60px] sm:rounded-full sm:pr-2'>
+      <nav
+        ref={navRef}
+        className='bg-nav absolute top-2 left-1/2 z-10 mx-auto w-full max-w-[584px] -translate-x-1/2 rounded-[28px] py-2 pr-4 pl-6 backdrop-blur-xl sm:top-6 sm:h-[60px] sm:rounded-full sm:pr-2'
+      >
         <div className='flex size-full items-center justify-between'>
           <Link aria-label='Home' href='/' onClick={handleClickLogo}>
             <Icon className='size-9' icon='logo' />
@@ -47,8 +63,12 @@ export const Navigation = () => {
             ))}
             <li>
               <CommandBar>
-                <Button className='rounded-full sm:size-12' size='sm'>
-                  <Command className='size-6' />
+                <Button
+                  aria-label='Open command bar'
+                  className='rounded-full sm:size-12'
+                  size='sm'
+                >
+                  <CommandIcon className='size-6' />
                 </Button>
               </CommandBar>
             </li>
