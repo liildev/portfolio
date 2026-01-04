@@ -97,7 +97,7 @@ export const metadata: Metadata = {
     description,
     url: '/',
     siteName: title,
-    images: ['/me.png'],
+    images: ['/me.webp'],
     type: 'website',
   },
   twitter: {
@@ -105,7 +105,7 @@ export const metadata: Metadata = {
     site: '@liildev',
     title,
     description,
-    images: ['/me.png'],
+    images: ['/me.webp'],
   },
   robots: 'index, follow',
   icons: {

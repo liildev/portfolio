@@ -28,6 +28,7 @@ export const seo = ({
       title,
       description,
       url,
+      type: 'website',
       images: {
         url: imageUrl,
         width: 1200,
