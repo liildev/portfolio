@@ -56,14 +56,17 @@ export const TechStack = () => {
               y: translateY,
             }}
             className='absolute inset-0 overflow-hidden rounded-3xl'
+            initial={false}
             style={{
               zIndex,
               transformOrigin: 'center top',
             }}
             transition={{
               type: 'spring',
-              stiffness: 300,
-              damping: 30,
+              stiffness: 260,
+              damping: 25,
+              mass: 0.8,
+              restDelta: 0.001,
             }}
           >
             {position === 0 ? (

@@ -97,7 +97,14 @@ export const metadata: Metadata = {
     description,
     url: '/',
     siteName: title,
-    images: ['/me.webp'],
+    images: [
+      {
+        url: '/me.webp',
+        width: 1200,
+        height: 630,
+        alt: title,
+      },
+    ],
     type: 'website',
   },
   twitter: {
@@ -105,7 +112,14 @@ export const metadata: Metadata = {
     site: '@liildev',
     title,
     description,
-    images: ['/me.webp'],
+    images: [
+      {
+        url: '/me.webp',
+        width: 1200,
+        height: 630,
+        alt: title,
+      },
+    ],
   },
   alternates: {
     canonical: BASE_URL,

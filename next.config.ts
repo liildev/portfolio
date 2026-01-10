@@ -1,3 +1,4 @@
+import path from "node:path";
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
@@ -11,7 +12,11 @@ const nextConfig: NextConfig = {
       'framer-motion',
     ],
   },
+	compiler: {
+		removeConsole: process.env.NODE_ENV === 'production',
+	},
 	turbopack: {
+    root: path.resolve(__dirname),
 		rules: {
 			'*.svg': {
 				loaders: ['@svgr/webpack'],
@@ -23,6 +28,10 @@ const nextConfig: NextConfig = {
 		minimumCacheTTL: 86400,
 		deviceSizes: [320, 420, 768, 1024, 1200],
 		imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+		formats: ['image/webp', 'image/avif'],
+		dangerouslyAllowSVG: true,
+		contentDispositionType: 'attachment',
+		contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
 		remotePatterns: [
 			{
 				protocol: 'https',

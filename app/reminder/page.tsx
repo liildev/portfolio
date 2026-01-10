@@ -22,8 +22,10 @@ export default function Reminder() {
             <div className='relative size-full'>
               <Image
                 fill
+                priority
                 alt='Fall Down'
                 className='rounded-2xl object-cover'
+                sizes='(max-width: 640px) 100vw, 50vw'
                 src='/proverb/fall-down.webp'
               />
             </div>
@@ -46,6 +48,7 @@ export default function Reminder() {
                 fill
                 alt='Stand Up'
                 className='rounded-2xl object-cover'
+                sizes='(max-width: 640px) 100vw, 50vw'
                 src='/proverb/stand-up.webp'
               />
             </div>
