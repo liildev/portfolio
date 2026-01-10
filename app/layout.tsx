@@ -107,9 +107,12 @@ export const metadata: Metadata = {
     description,
     images: ['/me.webp'],
   },
+  alternates: {
+    canonical: BASE_URL,
+  },
   robots: 'index, follow',
   icons: {
-    icon: '/favicon.icon',
+    icon: '/favicon.ico',
     shortcut: '/shortcut-icon.png',
     apple: '/apple-icon.png',
     other: {
