@@ -11,51 +11,59 @@ import { BASE_URL } from '@/lib/constants';
 import { pagesMeta } from '@/lib/meta';
 
 const { title, description } = pagesMeta.main;
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      '@id': `${BASE_URL}/#website`,
+      url: BASE_URL,
+      name: title,
+      description,
+      publisher: { '@id': `${BASE_URL}/#person` },
+    },
+    {
+      '@type': 'Person',
+      '@id': `${BASE_URL}/#person`,
+      name: title,
+      url: BASE_URL,
+      jobTitle: 'Frontend Developer',
+      description: description,
+      knowsAbout: [
+        'Frontend Development',
+        'React',
+        'Next.js',
+        'TypeScript',
+        'Web Performance',
+      ],
+      sameAs: [
+        'https://twitter.com/liildev',
+        'https://github.com/liildev',
+        'https://linkedin.com/in/liildev',
+        'https://instagram.com/liildev.tsx',
+      ],
+    },
+    {
+      '@type': 'SiteNavigationElement',
+      '@id': `${BASE_URL}/#navigation`,
+      name: 'Main Navigation',
+      hasPart: [
+        { '@type': 'WebPage', name: 'About', url: `${BASE_URL}/about` },
+        { '@type': 'WebPage', name: 'Projects', url: `${BASE_URL}/projects` },
+      ],
+    },
+  ],
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: ReactNode;
 }>) {
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@graph': [
-      {
-        '@type': 'WebSite',
-        '@id': `${BASE_URL}/#website`,
-        url: BASE_URL,
-        name: title,
-        description,
-        publisher: { '@id': `${BASE_URL}/#person` },
-      },
-      {
-        '@type': 'Person',
-        '@id': `${BASE_URL}/#person`,
-        name: title,
-        url: BASE_URL,
-        sameAs: [
-          'https://twitter.com/liildev',
-          'https://github.com/liildev',
-          'https://linkedin.com/in/liildev',
-        ],
-      },
-      {
-        '@type': 'SiteNavigationElement',
-        '@id': `${BASE_URL}/#navigation`,
-        name: 'Main Navigation',
-        hasPart: [
-          { '@type': 'WebPage', name: 'About', url: `${BASE_URL}/about` },
-          { '@type': 'WebPage', name: 'Projects', url: `${BASE_URL}/projects` },
-        ],
-      },
-    ],
-  };
-
   return (
-    <html lang='en'>
+    <html lang='en' dir='ltr'>
       <body className={metropolis.className}>
         <script
-          // biome-ignore lint/security/noDangerouslySetInnerHtml: <false>
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
           type='application/ld+json'
         />
@@ -123,6 +131,11 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: BASE_URL,
+    types: {
+      'application/rss+xml': [
+        { url: '/rss.xml', title: 'Liil Dev - Projects RSS Feed' },
+      ],
+    },
   },
   robots: 'index, follow',
   icons: {

@@ -28,4 +28,7 @@ export const metropolis = localFont({
       style: 'normal',
     },
   ],
+  display: 'swap', // FOUT yaxshilash
+  preload: true, // Critical font preload
+  variable: '--font-metropolis', // CSS variable
 });

@@ -10,7 +10,7 @@ export const projects = (isOS: boolean) => [
   {
     title: "Let'sTrip (Web)",
     image: '/projects/letstrip-travel.webp',
-    url: 'https://letstrip.uz',
+    url: 'https://letstrip.travel',
     active: true,
   },
   // {
