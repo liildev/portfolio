@@ -2,13 +2,29 @@ import { ArrowRightIcon } from '@phosphor-icons/react/dist/ssr';
 import { CommandBar } from '@/components/command-bar';
 import { TechStack } from '@/components/tech-stack';
 import { Button } from '@/components/ui/button';
+import { BASE_URL } from '@/lib/constants';
 import { deviceInfo } from './actions';
+
+// ProfilePage schema for homepage
+const profilePageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfilePage',
+  '@id': `${BASE_URL}/#profilepage`,
+  mainEntity: {
+    '@id': `${BASE_URL}/#person`,
+  },
+  url: BASE_URL,
+};
 
 export default async function Home() {
   const { isApple } = await deviceInfo();
 
   return (
     <main className='container flex grow flex-col items-center justify-center gap-5 py-20 pb-10 xl:justify-end'>
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(profilePageSchema) }}
+      />
       <TechStack />
 
       <h1 className='pt-5'>Interfaces that wow — not just work</h1>

@@ -1,12 +1,60 @@
 import type { Metadata } from 'next';
 
 import Image from 'next/image';
+import { generateBreadcrumbSchema } from '@/lib/breadcrumb';
+import { BASE_URL } from '@/lib/constants';
 import { pagesMeta } from '@/lib/meta';
 import { seo } from '@/lib/seo';
+
+const breadcrumbSchema = generateBreadcrumbSchema([
+  { name: 'Home', path: '/' },
+  { name: 'Reminder', path: '/reminder' },
+]);
+
+// Article schema for inspirational content
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  '@id': `${BASE_URL}/reminder#article`,
+  headline: '七転び八起き - Fall Down Seven Times, Stand Up Eight',
+  description:
+    'Japanese proverb about resilience and perseverance. A reminder to keep going.',
+  author: {
+    '@type': 'Person',
+    '@id': `${BASE_URL}/#person`,
+    name: 'Liil Dev',
+  },
+  publisher: {
+    '@type': 'Person',
+    '@id': `${BASE_URL}/#person`,
+    name: 'Liil Dev',
+  },
+  inLanguage: 'en',
+  keywords: [
+    'resilience',
+    'motivation',
+    'Japanese proverb',
+    'perseverance',
+    'inspiration',
+  ],
+  image: [
+    `${BASE_URL}/proverb/fall-down.webp`,
+    `${BASE_URL}/proverb/stand-up.webp`,
+  ],
+  url: `${BASE_URL}/reminder`,
+};
 
 export default function Reminder() {
   return (
     <main className='container pt-28 sm:pt-32'>
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
       <h1>
         <strong>七転び八起き</strong>
       </h1>
