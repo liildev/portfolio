@@ -1,7 +1,7 @@
 'use client';
 
+import { useRouter } from '@bprogress/next/app';
 import { ArrowRightIcon } from '@phosphor-icons/react';
-import { useRouter } from 'next/navigation';
 import { useEffect, useRef } from 'react';
 
 import { ROUTES } from '@/lib/constants';

@@ -1,12 +1,12 @@
+import { useRouter } from '@bprogress/next/app';
 import {
-  ClockCountdown,
-  Code,
-  Copy,
-  House,
-  Lightbulb,
-  UserCircle,
+  ClockCountdownIcon,
+  CodeIcon,
+  CopyIcon,
+  HouseIcon,
+  LightbulbIcon,
+  UserCircleIcon,
 } from '@phosphor-icons/react/dist/ssr';
-import { useRouter } from 'next/navigation';
 import { toast } from 'sonner';
 
 import { ROUTES } from '@/lib/constants';
@@ -32,7 +32,7 @@ export const useCommandBar = () => {
           keywords: 'copy-link',
           section: 'General',
           perform: copyLink,
-          icon: Copy,
+          icon: CopyIcon,
         },
         {
           id: 'source',
@@ -45,7 +45,7 @@ export const useCommandBar = () => {
               'https://github.com/liildev/portfolio/tree/main',
               '_blank',
             ),
-          icon: Code,
+          icon: CodeIcon,
         },
       ],
     },
@@ -59,7 +59,7 @@ export const useCommandBar = () => {
           keywords: 'go-home',
           section: 'Go To',
           perform: () => router.push(ROUTES.home),
-          icon: House,
+          icon: HouseIcon,
         },
         {
           id: 'about',
@@ -68,7 +68,7 @@ export const useCommandBar = () => {
           keywords: 'go-about',
           section: 'Go To',
           perform: () => router.push(ROUTES.about),
-          icon: UserCircle,
+          icon: UserCircleIcon,
         },
         {
           id: 'projects',
@@ -77,7 +77,7 @@ export const useCommandBar = () => {
           keywords: 'go-projects',
           section: 'Go To',
           perform: () => router.push(ROUTES.projects),
-          icon: Lightbulb,
+          icon: LightbulbIcon,
         },
         {
           id: 'reminder',
@@ -86,7 +86,7 @@ export const useCommandBar = () => {
           keywords: 'go-reminder',
           section: 'Go To',
           perform: () => router.push(ROUTES.reminder),
-          icon: ClockCountdown,
+          icon: ClockCountdownIcon,
         },
       ],
     },
