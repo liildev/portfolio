@@ -41,22 +41,6 @@ const nextConfig: NextConfig = {
 			},
 		],
 	},
-	async redirects() {
-		return [
-			// Redirect non-www to www in production
-			{
-				source: '/:path*',
-				has: [
-					{
-						type: 'host',
-						value: 'liildev.uz',
-					},
-				],
-				destination: 'https://www.liildev.uz/:path*',
-				permanent: true,
-			},
-		];
-	},
 	async headers() {
 		return [
 			{
