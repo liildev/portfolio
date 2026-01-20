@@ -9,7 +9,6 @@ import { Layout } from '@/components/layout';
 import { Toaster } from '@/components/ui/sonner';
 import { BASE_URL } from '@/lib/constants';
 import { pagesMeta } from '@/lib/meta';
-import Loading from './loading';
 
 const { title, description } = pagesMeta.main;
 const jsonLd = {
