@@ -68,7 +68,6 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
           type='application/ld+json'
         />
-        <Loading />
         <Layout>{children}</Layout>
         <Toaster />
         <Analytics />
